@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="w-full h-screen">
+        <Outlet />
+      </div>
       <Footer />
     </>
   );

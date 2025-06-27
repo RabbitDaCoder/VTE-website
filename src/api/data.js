@@ -15,7 +15,6 @@ export const departments = [
     description: "Civil Engineering Department",
   },
 ];
-
 export const blogs = [
   {
     id: 1,
@@ -67,7 +66,6 @@ export const blogs = [
       "Social media has transformed the way we communicate and share information. This blog examines its effects on society, including both positive and negative aspects.",
   },
 ];
-
 export const notices = [
   {
     id: 1,

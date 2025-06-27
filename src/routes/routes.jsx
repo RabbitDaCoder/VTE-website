@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
+import App from "../App.jsx";
 import Home from "../pages/Home.jsx";
 import About from "../pages/About.jsx";
-import NotFound from "../components/NotFound.jsx";
-import App from "../App.jsx";
 import Contact from "../pages/Contact.jsx";
 import Blog from "../pages/Blog.jsx";
 import Notice from "../pages/Notice.jsx";
 import Events from "../pages/Events.jsx";
 import Departments from "../pages/Departments.jsx";
+import NotFound from "../components/NotFound.jsx";
 import DepartmentsDetails from "../components/UI/DepartmentsDetails.jsx";
 import NoticeDetails from "../components/UI/NoticeDetails.jsx";
 import BlogDetails from "../components/UI/BlogDetails.jsx";
