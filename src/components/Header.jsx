@@ -9,15 +9,15 @@ const Header = () => {
   const handleCloseMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="w-full lg:px-6 px-2  bg-white sticky top-0 z-30 transition-shadow">
+    <header className="w-full sticky top-0 z-30 transition-shadow">
       <div>
-        <section className="h-8 flex items-center justify-center gap-2 border border-stone-300 my-2 rounded-xl bg-gradient-to-r from-blue-50 to-purple-50 font-medium text-blue-900">
+        <section className="h-8 flex items-center justify-center gap-2 border border-stone-300 bg-gradient-to-r from-blue-50 to-purple-50 font-medium text-blue-900">
           Admission is on now, grab your seat now{" "}
           <span>
             <LuMoveRight />
           </span>
         </section>
-        <div className="w-full h-14 border border-stone-300 rounded-2xl px-5 py-1.5 flex items-center justify-between bg-white/80 backdrop-blur-md">
+        <div className="w-full h-14  bg-white border border-stone-300 px-5 py-1.5 flex items-center justify-between backdrop-blur-md">
           <Link
             to={"/"}
             className="text-2xl font-extrabold tracking-wide text-blue-700 drop-shadow-sm"

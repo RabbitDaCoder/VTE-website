@@ -1,3 +1,11 @@
+import {
+  LuUniversity,
+  LuBookOpen,
+  LuUsers,
+  LuTrophy,
+  LuCalendar,
+} from "react-icons/lu";
+
 export const departments = [
   {
     id: 1,
@@ -144,5 +152,33 @@ export const events = [
     title: "Event 3",
     description: "This is the description of event 3.",
     date: "2023-10-03",
+  },
+];
+
+export const features = [
+  {
+    icon: LuUniversity,
+    iconClass: "text-3xl text-blue-700",
+    label: "Campus Life",
+  },
+  {
+    icon: LuBookOpen,
+    iconClass: "text-3xl text-purple-700",
+    label: "Academics",
+  },
+  {
+    icon: LuUsers,
+    iconClass: "text-3xl text-blue-500",
+    label: "Community",
+  },
+  {
+    icon: LuTrophy,
+    iconClass: "text-3xl text-purple-500",
+    label: "Achievements",
+  },
+  {
+    icon: LuCalendar,
+    iconClass: "text-3xl text-blue-400",
+    label: "Events",
   },
 ];
