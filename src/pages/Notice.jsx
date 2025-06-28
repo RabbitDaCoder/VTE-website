@@ -105,138 +105,144 @@ const eventBanner = {
 const NOTICES_PER_PAGE = 6;
 
 const Notice = () => {
-  // Pagination logic
   const [page, setPage] = useState(1);
-  const noticesToShow = allNotices.slice(pinnedNotices.length); // exclude pinned
+  const noticesToShow = allNotices.slice(pinnedNotices.length);
   const totalPages = Math.ceil(noticesToShow.length / NOTICES_PER_PAGE);
-
   const paginated = noticesToShow.slice(
     (page - 1) * NOTICES_PER_PAGE,
     page * NOTICES_PER_PAGE
   );
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 space-y-10">
+    <main className="max-w-2xl mx-auto px-2 py-6 space-y-8">
       {/* Hero Section */}
-      <section className="text-center py-8 bg-blue-50 rounded-lg shadow mb-6">
-        <h1 className="text-4xl font-semibold mb-2">Fuck you dumebi</h1>
-        <p className="text-lg text-gray-600">
-          Stay informed with the latest updates and important information.
-        </p>
+      <section className="text-center py-6 bg-blue-50 rounded-lg shadow">
+        <h1 className="text-4xl font-semibold mb-1">Faculty Notice Board</h1>
+        <p className="text-gray-600">Stay informed with the latest updates</p>
       </section>
 
-      {/* Pinned Notices */}
+      {/* Divider */}
+      <div className="border-t border-gray-200" />
+
+      {/* Pinned / Important Notices */}
       <section>
-        <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-          <span role="img" aria-label="pin">
-            📌
-          </span>
+        <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+          <span role="img" aria-label="pin">📌</span>
           Important Notices
         </h2>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="space-y-3">
           {pinnedNotices.map((n) => (
             <div
               key={n.id}
-              className="border-l-4 border-yellow-400 bg-yellow-50 p-4 rounded shadow flex flex-col"
+              className="border-l-4 border-yellow-400 bg-yellow-50 p-3 rounded shadow"
             >
-              <div className="flex justify-between items-center mb-1">
+              <div className="flex justify-between items-center">
                 <span className="font-semibold">{n.title}</span>
-                <span className="text-xs bg-yellow-200 px-2 py-0.5 rounded">
-                  {n.category}
-                </span>
+                <span className="text-xs bg-yellow-200 px-2 py-0.5 rounded">{n.category}</span>
               </div>
-              <span className="text-sm text-gray-500 mb-2">{n.date}</span>
-              <p className="text-gray-700">{n.summary}</p>
+              <span className="text-xs text-gray-500">{n.date}</span>
+              <p className="text-gray-700 text-sm">{n.summary}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Notices Feed with Pagination */}
+      {/* Divider */}
+      <div className="border-t border-gray-200" />
+
+      {/* Notice Feeds */}
       <section>
-        <h2 className="text-2xl font-bold mb-4">All Notices</h2>
-        <div className="grid gap-4">
+        <h2 className="text-xl font-bold mb-3">Notice Feeds</h2>
+        <div className="space-y-3">
           {paginated.map((n) => (
             <div
               key={n.id}
-              className="bg-white rounded shadow p-4 border hover:shadow-lg transition"
+              className="bg-white rounded shadow p-3 border hover:shadow-lg transition"
             >
               <div className="flex justify-between items-center">
-                <a href="#" className="font-semibold text-blue-700 hover:underline">
-                  {n.title}
-                </a>
-                <span className="text-xs bg-gray-100 px-2 py-0.5 rounded">
-                  {n.category}
-                </span>
+                <a href="#" className="font-semibold text-blue-700 hover:underline">{n.title}</a>
+                <span className="text-xs bg-gray-100 px-2 py-0.5 rounded">{n.category}</span>
               </div>
-              <span className="text-sm text-gray-500">{n.date}</span>
-              <p className="text-gray-700 mt-1">{n.summary}</p>
+              <span className="text-xs text-gray-500">{n.date}</span>
+              <p className="text-gray-700 text-sm">{n.summary}</p>
             </div>
           ))}
         </div>
-        {/* Pagination Controls */}
-        <div className="flex justify-center gap-2 mt-4">
+        {/* Pagination */}
+        <div className="flex justify-center gap-2 mt-3">
           <button
             className="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300"
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
-          >
-            Prev
-          </button>
+          >Prev</button>
           {[...Array(totalPages)].map((_, i) => (
             <button
               key={i}
-              className={`px-3 py-1 rounded ${
-                page === i + 1
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-100 hover:bg-gray-200"
-              }`}
+              className={`px-3 py-1 rounded ${page === i + 1 ? "bg-blue-500 text-white" : "bg-gray-100 hover:bg-gray-200"}`}
               onClick={() => setPage(i + 1)}
-            >
-              {i + 1}
-            </button>
+            >{i + 1}</button>
           ))}
           <button
             className="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300"
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
-          >
-            Next
-          </button>
+          >Next</button>
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="border-t border-gray-200" />
+
       {/* Dean's Corner */}
-      <section className="bg-blue-100 rounded-lg p-6 flex flex-col md:flex-row items-center gap-6">
-        <img
-          src={dean.img}
-          alt="Dean"
-          className="w-24 h-24 rounded-full object-cover border-4 border-blue-300"
-        />
-        <div>
-          <h3 className="text-xl font-bold mb-2">Dean’s Corner</h3>
-          <blockquote className="italic text-gray-700 flex items-start gap-2">
-            <span className="text-2xl text-blue-400">“</span>
-            {dean.message}
-          </blockquote>
-          <div className="mt-2 text-sm text-gray-600 font-semibold">
-            — {dean.name}
+      <section>
+        <h2 className="text-xl font-bold mb-3">Dean’s Corner</h2>
+        <div className="bg-blue-100 rounded-lg p-4 flex flex-col md:flex-row items-center gap-4">
+          <img
+            src={dean.img}
+            alt="Dean"
+            className="w-20 h-20 rounded-full object-cover border-4 border-blue-300"
+          />
+          <div>
+            <blockquote className="italic text-gray-700 flex items-start gap-2">
+              <span className="text-2xl text-blue-400">“</span>
+              {dean.message}
+            </blockquote>
+            <div className="mt-2 text-sm text-gray-600 font-semibold">— {dean.name}</div>
           </div>
         </div>
       </section>
 
-      {/* Downloads Section */}
+      {/* Divider */}
+      <div className="border-t border-gray-200" />
+
+      {/* Ads / Special Highlight / Callout */}
       <section>
-        <h2 className="text-2xl font-bold mb-4">Downloads & Resources</h2>
-        <div className="grid gap-4 md:grid-cols-2">
+        <h2 className="text-xl font-bold mb-3">Special Highlight</h2>
+        <a
+          href={highlight.url}
+          className="block bg-gradient-to-r from-yellow-300 to-orange-400 rounded-lg p-4 text-center shadow-lg hover:scale-105 transition"
+        >
+          <div className="text-lg font-bold mb-1">{highlight.title}</div>
+          <div className="mb-1">{highlight.desc}</div>
+          <span className="inline-block mt-2 bg-white text-orange-600 font-semibold px-4 py-2 rounded shadow">{highlight.cta}</span>
+        </a>
+      </section>
+
+      {/* Divider */}
+      <div className="border-t border-gray-200" />
+
+      {/* Downloads / Resources */}
+      <section>
+        <h2 className="text-xl font-bold mb-3">Downloads & Resources</h2>
+        <div className="space-y-3">
           {downloads.map((d) => (
             <a
               key={d.name}
               href={d.url}
-              className="flex items-center gap-4 bg-gray-50 p-4 rounded shadow hover:bg-blue-50 transition"
+              className="flex items-center gap-3 bg-gray-50 p-3 rounded shadow hover:bg-blue-50 transition"
               download
             >
-              <span className="text-3xl">{d.icon}</span>
+              <span className="text-2xl">{d.icon}</span>
               <div>
                 <div className="font-semibold">{d.name}</div>
                 <div className="text-xs text-gray-500">{d.desc}</div>
@@ -248,34 +254,22 @@ const Notice = () => {
         </div>
       </section>
 
-      {/* Special Callout / Highlight Banner */}
-      <section>
-        <a
-          href={highlight.url}
-          className="block bg-gradient-to-r from-yellow-300 to-orange-400 rounded-lg p-6 text-center shadow-lg hover:scale-105 transition"
-        >
-          <div className="text-xl font-bold mb-2">{highlight.title}</div>
-          <div className="mb-2">{highlight.desc}</div>
-          <span className="inline-block mt-2 bg-white text-orange-600 font-semibold px-4 py-2 rounded shadow">
-            {highlight.cta}
-          </span>
-        </a>
-      </section>
+      {/* Divider */}
+      <div className="border-t border-gray-200" />
 
-      {/* Event Banner */}
+      {/* Events Banner */}
       <section>
+        <h2 className="text-xl font-bold mb-3">Events</h2>
         <a
           href={eventBanner.url}
-          className="block bg-blue-600 text-white rounded-lg p-6 text-center shadow-lg hover:bg-blue-700 transition"
+          className="block bg-blue-600 text-white rounded-lg p-4 text-center shadow-lg hover:bg-blue-700 transition"
         >
-          <div className="text-xl font-bold mb-2">{eventBanner.title}</div>
-          <div className="mb-2">{eventBanner.desc}</div>
-          <span className="inline-block mt-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded shadow">
-            {eventBanner.cta}
-          </span>
+          <div className="text-lg font-bold mb-1">{eventBanner.title}</div>
+          <div className="mb-1">{eventBanner.desc}</div>
+          <span className="inline-block mt-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded shadow">{eventBanner.cta}</span>
         </a>
       </section>
-    </div>
+    </main>
   );
 };
 
