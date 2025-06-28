@@ -11,6 +11,7 @@ import NotFound from "../components/NotFound.jsx";
 import DepartmentsDetails from "../components/UI/DepartmentsDetails.jsx";
 import NoticeDetails from "../components/UI/NoticeDetails.jsx";
 import BlogDetails from "../components/UI/BlogDetails.jsx";
+import Academia from "../pages/Academia.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "events",
         element: <Events />,
+      },
+      {
+        path: "academica",
+        element: <Academia />,
       },
       {
         path: "departments",
