@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className="w-full sticky top-0 z-30 transition-shadow">
       <div>
-        <section className="h-8 flex items-center justify-center gap-2 border border-stone-300 bg-gradient-to-r from-blue-50 to-purple-50 font-medium text-blue-900">
+        <section className="h-8 flex items-center justify-center gap-2 border border-stone-300 bg-gradient-to-r from-green-50 to-green-100 font-medium text-green-900">
           Admission is on now, grab your seat now{" "}
           <span>
             <LuMoveRight />
@@ -20,12 +20,12 @@ const Header = () => {
         <div className="w-full h-14  bg-white border border-stone-300 px-5 py-1.5 flex items-center justify-between backdrop-blur-md">
           <Link
             to={"/"}
-            className="text-2xl font-extrabold tracking-wide text-blue-700 drop-shadow-sm"
+            className="text-2xl font-extrabold tracking-wide text-green-700 drop-shadow-sm"
           >
-            <div>VESA</div>
+            <div>VTE</div>
           </Link>
           <nav className="mt-2">
-            <ul className="lg:flex hidden space-x-4 items-center font-semibold">
+            <ul className="lg:flex hidden space-x-4 text-gray-700 items-center font-semibold">
               <Link to={"/about"}>About</Link>
               <Link to={"/blog"}>Blog</Link>
               <Link to={"/contact"}>Contact</Link>
@@ -36,11 +36,11 @@ const Header = () => {
             </ul>
           </nav>
           <div className="lg:flex hidden">
-            <button className="border border-blue-300 px-4 py-1 rounded-lg font-semibold bg-blue-50 hover:bg-blue-100 transition">
+            <button className="border border-green-300 px-4 py-1 rounded-lg font-semibold bg-green-50 hover:bg-green-100 transition">
               Get in touch
             </button>
           </div>
-          <div className="text-4xl lg:hidden block cursor-pointer text-blue-700">
+          <div className="text-4xl lg:hidden block cursor-pointer text-green-700">
             <LuAlignLeft onClick={handleMenuToggle} />
           </div>
         </div>
@@ -63,9 +63,9 @@ const Header = () => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between px-4 py-4 border-b border-stone-200">
-          <span className="text-xl font-bold text-blue-700">Menu</span>
+          <span className="text-xl font-bold text-green-700">Menu</span>
           <button
-            className="text-3xl text-blue-700 hover:text-blue-900 transition"
+            className="text-3xl text-green-700 hover:text-green-900 transition"
             onClick={handleCloseMenu}
             aria-label="Close menu"
           >
@@ -73,7 +73,7 @@ const Header = () => {
           </button>
         </div>
         <nav className="mt-6 px-4">
-          <ul className="space-y-4 font-semibold text-blue-800">
+          <ul className="space-y-4 font-semibold text-green-800">
             <li>
               <Link to={"/about"} onClick={handleCloseMenu}>
                 About
@@ -112,7 +112,7 @@ const Header = () => {
           </ul>
           <div className="mt-8">
             <button
-              className="w-full border border-blue-300 px-4 py-2 rounded-lg font-semibold bg-blue-50 hover:bg-blue-100 transition"
+              className="w-full border border-green-300 px-4 py-2 rounded-lg font-semibold bg-green-50 hover:bg-green-100 transition"
               onClick={handleCloseMenu}
             >
               Get in touch

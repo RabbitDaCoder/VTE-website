@@ -12,6 +12,7 @@ import DepartmentsDetails from "../components/UI/DepartmentsDetails.jsx";
 import NoticeDetails from "../components/UI/NoticeDetails.jsx";
 import BlogDetails from "../components/UI/BlogDetails.jsx";
 import Academia from "../pages/Academia.jsx";
+import EventsDetails from "../components/UI/EventsDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "blog/:id",
         element: <BlogDetails />,
+      },
+      {
+        path: "events/:id",
+        element: <EventsDetails />,
       },
       {
         path: "*",

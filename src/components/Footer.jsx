@@ -10,21 +10,42 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="px-0 py-0 bg-gradient-to-tr from-blue-50 via-white to-purple-50 border-t border-stone-200">
-      {/* todo: Add events/Announcements
-      add Newsletter/contact CTA     
-     
-     */}
-
+    <footer className="px-0 py-0 bg-gradient-to-tr from-green-50 via-white to-green-100 border-t border-stone-200">
+      {/* /* Newsletter/Contact CTA */}
+      <section className="py-12 px-4 bg-gradient-to-r from-green-400 to-green-600 text-white lg:rounded-2xl shadow-lg my-16 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <div>
+          <h3 className="text-2xl font-bold mb-2">
+            Subscribe to our Newsletter
+          </h3>
+          <p className="text-green-100 max-w-md">
+            Get the latest updates, news, and events from VTE directly to your
+            inbox.
+          </p>
+        </div>
+        <form className="flex gap-2 w-full md:w-auto">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="px-4 py-2 rounded-full border border-white text-white w-full md:w-64 focus:outline-none bg-green-500 placeholder-white"
+            required
+          />
+          <button
+            type="submit"
+            className="px-6 py-2 rounded-full bg-white text-green-700 font-semibold shadow hover:bg-green-100 transition"
+          >
+            Subscribe
+          </button>
+        </form>
+      </section>
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           {/* Logo and contact */}
           <div className="flex flex-col gap-4 items-start">
             <Link
               to={"/"}
-              className="text-3xl font-extrabold tracking-wide text-blue-700 drop-shadow-sm"
+              className="text-3xl font-extrabold tracking-wide text-green-700 drop-shadow-sm"
             >
-              VESA
+              VTE
             </Link>
             <div className="text-base text-gray-600">
               We believe in the power of play to foster creativity,
@@ -33,15 +54,15 @@ const Footer = () => {
             </div>
             <div className="flex flex-col gap-2 text-gray-700 text-sm">
               <div className="flex items-center gap-2">
-                <LuMail className="text-xl text-blue-700" />
+                <LuMail className="text-xl text-green-700" />
                 <span>vesa@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
-                <LuPhone className="text-xl text-blue-700" />
+                <LuPhone className="text-xl text-green-700" />
                 <span>9045678223</span>
               </div>
               <div className="flex items-center gap-2">
-                <LuMapPin className="text-xl text-blue-700" />
+                <LuMapPin className="text-xl text-green-700" />
                 <span>Nssuka, Enugu Nigeria.</span>
               </div>
             </div>
@@ -49,14 +70,14 @@ const Footer = () => {
           {/* Site map */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <div>
-              <h6 className="text-base font-semibold mb-2 text-blue-700">
+              <h6 className="text-base font-semibold mb-2 text-green-700">
                 Home
               </h6>
               <ul className="space-y-1">
                 <li>
                   <Link
                     to={"/"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     Features
                   </Link>
@@ -64,7 +85,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to={"/about"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     Our Testimonials
                   </Link>
@@ -72,7 +93,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to={"/contact"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     FAQ
                   </Link>
@@ -80,14 +101,14 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h6 className="text-base font-semibold mb-2 text-blue-700">
+              <h6 className="text-base font-semibold mb-2 text-green-700">
                 About Us
               </h6>
               <ul className="space-y-1">
                 <li>
                   <Link
                     to={"/"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     Our Mission
                   </Link>
@@ -95,7 +116,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to={"/about"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     Our Vision
                   </Link>
@@ -103,7 +124,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to={"/contact"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     Awards
                   </Link>
@@ -111,7 +132,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to={"/contact"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     History
                   </Link>
@@ -119,7 +140,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to={"/contact"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     Teachers
                   </Link>
@@ -127,14 +148,14 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h6 className="text-base font-semibold mb-2 text-blue-700">
+              <h6 className="text-base font-semibold mb-2 text-green-700">
                 Academics
               </h6>
               <ul className="space-y-1">
                 <li>
                   <Link
                     to={"/"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     Special Features
                   </Link>
@@ -142,7 +163,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to={"/"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     Students Life
                   </Link>
@@ -150,7 +171,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to={"/about"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     Gallery
                   </Link>
@@ -158,23 +179,22 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h6 className="text-base font-semibold mb-2 text-blue-700">
+              <h6 className="text-base font-semibold mb-2 text-green-700">
                 Contact Us
               </h6>
               <ul className="space-y-1">
                 <li>
                   <Link
                     to={"/"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     Admission Information
                   </Link>
                 </li>
-
                 <li>
                   <Link
                     to={"/about"}
-                    className="text-gray-600 hover:text-blue-700 transition"
+                    className="text-gray-600 hover:text-green-700 transition"
                   >
                     Map & Direction
                   </Link>
@@ -188,19 +208,19 @@ const Footer = () => {
           <div className="flex items-center divide-x divide-stone-400 text-sm font-semibold">
             <Link
               to={"/privacy-policy"}
-              className="px-3 hover:text-blue-700 transition"
+              className="px-3 hover:text-green-700 transition"
             >
               Terms of Service
             </Link>
             <Link
               to={"/terms-of-service"}
-              className="px-3 hover:text-blue-700 transition"
+              className="px-3 hover:text-green-700 transition"
             >
               Privacy Policy
             </Link>
             <Link
               to={"/terms-of-service"}
-              className="px-3 hover:text-blue-700 transition"
+              className="px-3 hover:text-green-700 transition"
             >
               Cookie Policy
             </Link>
@@ -208,27 +228,27 @@ const Footer = () => {
           <div className="flex gap-3 mt-2 lg:mt-0">
             <Link
               to={"/"}
-              className="p-2 bg-blue-50 rounded-full hover:bg-blue-100 transition"
+              className="p-2 bg-green-50 rounded-full hover:bg-green-100 transition"
             >
-              <FaFacebookF className="text-xl text-blue-700" />
+              <FaFacebookF className="text-xl text-green-700" />
             </Link>
             <Link
               to={"/"}
-              className="p-2 bg-blue-50 rounded-full hover:bg-blue-100 transition"
+              className="p-2 bg-green-50 rounded-full hover:bg-green-100 transition"
             >
-              <FaXTwitter className="text-xl text-blue-700" />
+              <FaXTwitter className="text-xl text-green-700" />
             </Link>
             <Link
               to={"/"}
-              className="p-2 bg-blue-50 rounded-full hover:bg-blue-100 transition"
+              className="p-2 bg-green-50 rounded-full hover:bg-green-100 transition"
             >
-              <FaInstagram className="text-xl text-blue-700" />
+              <FaInstagram className="text-xl text-green-700" />
             </Link>
             <Link
               to={"/"}
-              className="p-2 bg-blue-50 rounded-full hover:bg-blue-100 transition"
+              className="p-2 bg-green-50 rounded-full hover:bg-green-100 transition"
             >
-              <FaLinkedinIn className="text-xl text-blue-700" />
+              <FaLinkedinIn className="text-xl text-green-700" />
             </Link>
           </div>
         </div>

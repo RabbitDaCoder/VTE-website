@@ -12,37 +12,37 @@ const NotFound = () => {
         style={{ backgroundImage: `url(${NotFoundImage})` }}
       >
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-blue-900/60 to-purple-900/60 backdrop-blur-sm z-0" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-green-900/60 to-green-700/60 backdrop-blur-sm z-0" />
 
         {/* Main Content */}
         <div className="relative z-10 max-w-xl">
           <div className="flex items-center gap-3 mb-2">
-            <span className="uppercase tracking-widest text-sm font-semibold text-blue-200">
+            <span className="uppercase tracking-widest text-sm font-semibold text-green-200">
               Page Not Found
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-white drop-shadow-lg">
             404 – This isn’t part of the journey
           </h1>
-          <p className="text-lg mb-8 text-blue-100">
+          <p className="text-lg mb-8 text-green-100">
             We checked twice. Still no luck. Maybe try searching or head back to
             the homepage?
           </p>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:from-blue-700 hover:to-purple-700 transition"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600 to-green-400 text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:from-green-700 hover:to-green-500 transition"
           >
             <LuArrowLeft className="text-xl" />
             Back to Home
           </Link>
-          <p className="mt-6 text-sm text-blue-200 flex items-center gap-2">
+          <p className="mt-6 text-sm text-green-200 flex items-center gap-2">
             <LuCompass className="text-lg" />
             Let’s find something better together.
           </p>
         </div>
 
         {/* Fun Message */}
-        <div className="relative z-10 max-w-md text-blue-100 text-base space-y-4 bg-blue-900/40 rounded-xl p-6 shadow-lg backdrop-blur-sm">
+        <div className="relative z-10 max-w-md text-green-100 text-base space-y-4 bg-green-900/40 rounded-xl p-6 shadow-lg backdrop-blur-sm">
           <p className="flex items-center gap-2">
             “A student once tried to find the Faculty building... ended up in
             the cafeteria twice. We feel you.”
