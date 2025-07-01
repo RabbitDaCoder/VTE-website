@@ -1,7 +1,11 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
 import Header from "./components/Header.jsx";
+<<<<<<< HEAD
 import Footer from "./components/Footer.jsx";
 import { useEffect } from "react";
+=======
+// import Footer from "./components/Footer.jsx";
+>>>>>>> origin/stephen
 function App() {
   const { pathname } = useLocation();
 
@@ -14,7 +18,7 @@ function App() {
       <div className="w-full h-full">
         <Outlet />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
@@ -24,3 +28,11 @@ export default App;
 // It includes a header, a link to the About page, and a footer.
 // The Outlet component is used to render the child routes defined in the router configuration.
 // The Link component is used to navigate to the About page without reloading the application.
+
+
+
+
+
+
+
+

@@ -578,3 +578,4 @@ export const testimonials = [
     image: JuricPics,
   },
 ];
+
