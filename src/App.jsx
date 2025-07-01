@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
+// import Footer from "./components/Footer.jsx";
 function App() {
   return (
     <>
@@ -8,7 +8,7 @@ function App() {
       <div className="w-full h-screen">
         <Outlet />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
@@ -18,3 +18,11 @@ export default App;
 // It includes a header, a link to the About page, and a footer.
 // The Outlet component is used to render the child routes defined in the router configuration.
 // The Link component is used to navigate to the About page without reloading the application.
+
+
+
+
+
+
+
+
