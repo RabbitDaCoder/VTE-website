@@ -1,10 +1,10 @@
 import React from 'react';
 
-const CustomInput = ({ htmlFor, text, type, id, name, placeholder, ...otherProps }) => {
+const CustomInput = ({ htmlFor, text, className, type, id, name, placeholder, ...otherProps }) => {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-y-[8px] mb-[15px]">
             <label htmlFor={htmlFor}>{text}</label>
-            <input type={type} id={id} name={name} placeholder={placeholder} {...otherProps} />
+            <input className={`w-[100%] border border-gray-200 rounded-sm h-[35px] p-[5px] ${className}`} type={type} id={id} name={name} placeholder={placeholder} {...otherProps} />
         </div>
     )
 }
