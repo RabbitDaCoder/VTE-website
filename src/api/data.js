@@ -21,18 +21,20 @@ import {
   FaUserFriends,
   FaUserTie,
 } from "react-icons/fa";
-import JanePics from "../../public/images/jane.jpg";
-import AyoPics from "../../public/images/ayo.jpg";
-import JuricPics from "../../public/images/jurica.jpg";
+import JanePics from "../../public/images/testimonial/jane.jpg";
+import AyoPics from "../../public/images/testimonial/ayo.jpg";
+import JuricPics from "../../public/images/testimonial/jurica.jpg";
 import computer from "../../public/images/departments/computer.jpg";
 import mech from "../../public/images/departments/mech.jpg";
 import civil from "../../public/images/departments/civil.jpg";
 import medicine from "../../public/images/departments/medicine.jpg";
 import physics from "../../public/images/departments/physics.jpg";
-import blogImg from "../../public/images/blogs/blogImg.jpg";
+import blogImg1 from "../../public/images/blogs/blogImg.jpg";
+
 import eventsImg2 from "../../public/images/events/eventsImg-2.jpg";
 import eventsImg from "../../public/images/events/eventsImg-1.jpg";
 import eventsImg3 from "../../public/images/events/eventsImg-3.jpg";
+import { generateID } from "../utils/generateID";
 export const departments = [
   {
     id: 1,
@@ -97,77 +99,210 @@ export const departments = [
 ];
 export const blogs = [
   {
-    id: 1,
+    id: generateID(),
     title: "Understanding Quantum Computing",
     slug: "understanding-quantum-computing",
-    image: blogImg,
+    image: blogImg1,
     tags: ["Quantum", "Computing", "Physics", "Technology"],
-    content:
-      "Quantum computing is a rapidly evolving field that leverages the principles of quantum mechanics to process information in fundamentally different ways than classical computers.",
+    date: "2024-06-01",
+    author: "Dr. Ada Quantum",
+    content: `Quantum computing is a rapidly evolving field that leverages the principles of quantum mechanics to process information in fundamentally different ways than classical computers.
+
+This blog dives into the basics of qubits, superposition, and entanglement, exploring how these principles are utilized in quantum algorithms like Shor’s and Grover’s.
+
+**Key Takeaways:**
+- Qubits vs. classical bits
+- Quantum gates and circuits
+- Real-world applications and challenges`,
   },
   {
-    id: 2,
+    id: generateID(),
     title: "The Future of Artificial Intelligence",
     slug: "future-of-artificial-intelligence",
-    image: blogImg,
+    image: blogImg1,
     tags: ["AI", "Machine Learning", "Technology", "Future"],
-    content:
-      "Artificial intelligence (AI) is transforming industries and reshaping the way we interact with technology. From machine learning to natural language processing, AI is paving the way for innovative solutions.",
+    date: "2024-06-10",
+    author: "Sophia Neural",
+    content: `Artificial intelligence (AI) is transforming industries and reshaping the way we interact with technology. From machine learning to natural language processing, AI is paving the way for innovative solutions.
+
+Explore emerging trends, ethical debates, and how AI is embedded into everyday applications.
+
+**Highlights:**
+- AI in healthcare, finance, and education
+- The ethics of AI and bias
+- The future of work in an AI-driven world`,
   },
   {
-    id: 3,
+    id: generateID(),
     title: "Advancements in Renewable Energy",
     slug: "advancements-in-renewable-energy",
-    image: blogImg,
+    image: blogImg1,
     tags: ["Renewable Energy", "Climate", "Sustainability", "Green Tech"],
-    content:
-      "Renewable energy sources like solar, wind, and hydroelectric power are becoming increasingly important in the fight against climate change. This blog explores the latest advancements in renewable energy technologies.",
+    date: "2024-06-15",
+    author: "Evan Solar",
+    content: `Renewable energy sources like solar, wind, and hydroelectric power are becoming increasingly important in the fight against climate change.
+
+This blog explores the latest innovations in solar panel technology, wind turbine efficiency, and grid integration strategies.
+
+**What you'll learn:**
+- How solar panels are getting cheaper and more efficient
+- The rise of offshore wind farms
+- Smart grids and energy storage`,
   },
   {
-    id: 4,
+    id: generateID(),
     title: "Exploring the Metaverse",
     slug: "exploring-the-metaverse",
-    image: blogImg,
+    image: blogImg1,
     tags: ["Metaverse", "AR/VR", "Virtual Reality", "Technology"],
-    content:
-      "The metaverse is a virtual universe that combines augmented reality, virtual reality, and the internet. It offers immersive experiences and new opportunities for social interaction, entertainment, and commerce.",
+    date: "2024-06-20",
+    author: "Jordan Immersive",
+    content: `The metaverse is a virtual universe that combines augmented reality, virtual reality, and the internet.
+
+It offers immersive experiences and new opportunities for social interaction, entertainment, and commerce.
+
+**Topics covered:**
+- What is the metaverse?
+- AR/VR devices and platforms
+- The future of digital communities`,
   },
   {
-    id: 5,
+    id: generateID(),
     title: "Cybersecurity in the Digital Age",
     slug: "cybersecurity-in-the-digital-age",
-    image: blogImg,
+    image: blogImg1,
     tags: ["Cybersecurity", "Data Protection", "Tech Trends", "Hacking"],
-    content:
-      "As our reliance on digital technologies grows, so does the importance of cybersecurity. This blog discusses the latest trends and best practices in protecting sensitive information from cyber threats.",
+    date: "2024-06-22",
+    author: "Alex Shield",
+    content: `As our reliance on digital technologies grows, so does the importance of cybersecurity.
+
+This blog discusses the latest trends and best practices in protecting sensitive information from cyber threats, and how to stay safe online.
+
+**Read about:**
+- Common cyber threats and how to avoid them
+- The importance of strong passwords
+- The future of cybersecurity`,
   },
   {
-    id: 6,
+    id: generateID(),
     title: "The Rise of Blockchain Technology",
     slug: "rise-of-blockchain-technology",
-    image: blogImg,
+    image: blogImg1,
     tags: ["Blockchain", "Cryptocurrency", "Finance", "Security"],
-    content:
-      "Blockchain technology is revolutionizing industries by providing secure and transparent ways to record transactions. This blog explores its applications beyond cryptocurrencies.",
+    date: "2024-06-25",
+    author: "Nina Ledger",
+    content: `Blockchain technology is revolutionizing industries by providing secure and transparent ways to record transactions.
+
+This blog explores its applications beyond cryptocurrencies, including supply chain, healthcare, and digital identity.
+
+**You'll discover:**
+- How blockchain works
+- Real-world use cases
+- The future of decentralized tech`,
   },
   {
-    id: 7,
-    title: "Sustainable Urban Development",
-    slug: "sustainable-urban-development",
-    image: blogImg,
-    tags: ["Urban Planning", "Sustainability", "Environment", "Smart Cities"],
-    content:
-      "Urban areas are facing challenges related to sustainability, and innovative solutions are needed. This blog discusses sustainable urban development practices and their impact on communities.",
+    id: generateID(),
+    title: "Understanding Quantum Computing",
+    slug: "understanding-quantum-computing",
+    image: blogImg1,
+    tags: ["Quantum", "Computing", "Physics", "Technology"],
+    date: "2024-06-01",
+    author: "Dr. Ada Quantum",
+    content: `Quantum computing is a rapidly evolving field that leverages the principles of quantum mechanics to process information in fundamentally different ways than classical computers.
+
+This blog dives into the basics of qubits, superposition, and entanglement, exploring how these principles are utilized in quantum algorithms like Shor’s and Grover’s.
+
+**Key Takeaways:**
+- Qubits vs. classical bits
+- Quantum gates and circuits
+- Real-world applications and challenges`,
   },
   {
-    id: 8,
-    title: "The Impact of Social Media on Society",
-    slug: "impact-of-social-media-on-society",
-    image: blogImg,
-    tags: ["Social Media", "Communication", "Psychology", "Digital Culture"],
-    content:
-      "Social media has transformed the way we communicate and share information. This blog examines its effects on society, including both positive and negative aspects.",
+    id: generateID(),
+    title: "The Future of Artificial Intelligence",
+    slug: "future-of-artificial-intelligence",
+    image: blogImg1,
+    tags: ["AI", "Machine Learning", "Technology", "Future"],
+    date: "2024-06-10",
+    author: "Sophia Neural",
+    content: `Artificial intelligence (AI) is transforming industries and reshaping the way we interact with technology. From machine learning to natural language processing, AI is paving the way for innovative solutions.
+
+Explore emerging trends, ethical debates, and how AI is embedded into everyday applications.
+
+**Highlights:**
+- AI in healthcare, finance, and education
+- The ethics of AI and bias
+- The future of work in an AI-driven world`,
   },
+  {
+    id: generateID(),
+    title: "Advancements in Renewable Energy",
+    slug: "advancements-in-renewable-energy",
+    image: blogImg1,
+    tags: ["Renewable Energy", "Climate", "Sustainability", "Green Tech"],
+    date: "2024-06-15",
+    author: "Evan Solar",
+    content: `Renewable energy sources like solar, wind, and hydroelectric power are becoming increasingly important in the fight against climate change.
+
+This blog explores the latest innovations in solar panel technology, wind turbine efficiency, and grid integration strategies.
+
+**What you'll learn:**
+- How solar panels are getting cheaper and more efficient
+- The rise of offshore wind farms
+- Smart grids and energy storage`,
+  },
+  {
+    id: generateID(),
+    title: "Exploring the Metaverse",
+    slug: "exploring-the-metaverse",
+    image: blogImg1,
+    tags: ["Metaverse", "AR/VR", "Virtual Reality", "Technology"],
+    date: "2024-06-20",
+    author: "Jordan Immersive",
+    content: `The metaverse is a virtual universe that combines augmented reality, virtual reality, and the internet.
+
+It offers immersive experiences and new opportunities for social interaction, entertainment, and commerce.
+
+**Topics covered:**
+- What is the metaverse?
+- AR/VR devices and platforms
+- The future of digital communities`,
+  },
+  {
+    id: generateID(),
+    title: "Cybersecurity in the Digital Age",
+    slug: "cybersecurity-in-the-digital-age",
+    image: blogImg1,
+    tags: ["Cybersecurity", "Data Protection", "Tech Trends", "Hacking"],
+    date: "2024-06-22",
+    author: "Alex Shield",
+    content: `As our reliance on digital technologies grows, so does the importance of cybersecurity.
+
+This blog discusses the latest trends and best practices in protecting sensitive information from cyber threats, and how to stay safe online.
+
+**Read about:**
+- Common cyber threats and how to avoid them
+- The importance of strong passwords
+- The future of cybersecurity`,
+  },
+  {
+    id: generateID(),
+    title: "The Rise of Blockchain Technology",
+    slug: "rise-of-blockchain-technology",
+    image: blogImg1,
+    tags: ["Blockchain", "Cryptocurrency", "Finance", "Security"],
+    date: "2024-06-25",
+    author: "Nina Ledger",
+    content: `Blockchain technology is revolutionizing industries by providing secure and transparent ways to record transactions.
+
+This blog explores its applications beyond cryptocurrencies, including supply chain, healthcare, and digital identity.
+
+**You'll discover:**
+- How blockchain works
+- Real-world use cases
+- The future of decentralized tech`,
+  },
+  // Add more blogs with unique images and content as needed...
 ];
 export const notices = [
   {
