@@ -1,11 +1,12 @@
 import React from 'react';
+import CustomButton from './CustomButton';
 
 const HelpBox = () => {
     return (
-        <div className="flex-1 p-6 rounded-md shadow-md mt-10">
-            <h3 className="text-xl font-serif font-bold mb-2">Still have questions?</h3>
-            <p className="text-sm mb-4">We're happy to help. You can reach us via email for anything we didn't cover.</p>
-            <a href="mailto:vte@unn.edu.ng" className="inline-block px-4 py-2 rounded">Email Us</a>
+        <div className="bg-white text-green-700 flex-1 p-6 rounded-md shadow-md mt-10">
+            <h3 className="text-lg font-bold mb-2">Still have questions?</h3>
+            <p className="text-base mb-4">We're happy to help. You can reach us via email for anything we didn't cover.</p>
+            <CustomButton text={'Email us'} className={'bg-white border border-green-400 inline-block px-4 py-2 rounded'} />
         </div>
     )
 }
