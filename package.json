@@ -14,10 +14,15 @@
     "@tailwindcss/vite": "^4.1.10",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "framer-motion": "^12.19.2",
 =======
     "esbuild": "^0.25.5",
 >>>>>>> origin/stephen
+=======
+    "aos": "^2.3.4",
+    "framer-motion": "^12.19.2",
+>>>>>>> origin/anointing-branch
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-helmet-async": "^2.0.5",
