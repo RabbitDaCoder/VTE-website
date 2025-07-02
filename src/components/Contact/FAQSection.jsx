@@ -46,7 +46,7 @@ const FAQSection = () => {
  ]
     
  return (
-    <div className="bg-white p-6 rounded-md shadow-md max-w-3xl mx-auto mt-10">
+    <div className="bg-white p-6 rounded-md shadow-md w-[100%] md:max-w-[600px] mt-10">
         <h2 className="text-lg font-bold mb-4 text-green-700">Frequently Asked Questions</h2>
         {faqData.map((item, idx) => (<AccordionItem key={idx} question={item.question} answer={item.answer} />))}
     </div>

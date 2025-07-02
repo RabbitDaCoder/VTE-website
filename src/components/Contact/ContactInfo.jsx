@@ -3,7 +3,7 @@ import { LuMail, LuPhone, LuMapPin } from "react-icons/lu";
 
 const  ContactInfo = () => {
     return (
-        <section className="bg-white mt-10 flex flex-col gap-y-[10px] rounded-md shadow-md p-6 text-green-700">
+        <section className="bg-white mt-10 flex flex-col gap-y-[10px] rounded-md shadow-md p-6 text-green-700 w-[100%] md:max-w-[600px]">
             <h3 className="font-bold text-lg">Faculty Contact Info</h3>
             <div className="flex flex-col gap-y-[15px]">
                 <div className="flex flex-row gap-x-[8px]">

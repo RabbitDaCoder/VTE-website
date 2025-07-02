@@ -8,7 +8,7 @@ import HelpBox from '../components/Contact/HelpBox';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen p-[20px] bg-gradient-to-br from-green-50 via-white to-green-100">
+    <div className="min-h-screen p-[20px] bg-gradient-to-br from-green-50 via-white to-green-100 flex flex-col items-center">
       <div>
         <h1 className="font-extrabold text-center mb-[10px] lg:mb-[15px] text-4xl md:text-3xl lg:text-4xl/12 xl:text-5xl/14 2xl:text-8xl/28 text-green-800">
           Contact the Faculty of<br /> Vocational and Technical Education</h1>
