@@ -70,7 +70,7 @@ const ContactForm = () => {
                 </div>
 
                 <button type="submit" disabled={loading} className={`flex items-center justify-center gap-2 h-[35px] mt-[15px]
-                    rounded-sm bg-green-500 text-white hover:bg-green-600 transition duration-200 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}>
+                    rounded-sm bg-green-500 text-white hover:bg-green-600 transition duration-1000 ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}>
                     {loading && (
                         <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
