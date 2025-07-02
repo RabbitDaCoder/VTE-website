@@ -6,7 +6,7 @@ const AccordionItem = ({question, answer}) => {
     const [isOpen, setIsOpen] = useState(false);        
     return (
         <div className="border-b border-green-400 py-4">
-            <button onClick={() => setIsOpen(!isOpen)} className="flex justify-between items-center w-full text-left">
+            <button onClick={() => setIsOpen(!isOpen)} className="flex justify-between items-center w-full text-left cursor-pointer">
                 <span className="text-base font-medium text-green-700">{question}</span>
                 <span className="text-xl text-green-700"> {isOpen ? <FaChevronUp /> : <FaChevronDown />}</span>
             </button>
@@ -46,7 +46,7 @@ const FAQSection = () => {
  ]
     
  return (
-    <div className="bg-white p-6 rounded-md shadow-md w-[100%] md:max-w-[600px] mt-10">
+    <div className="bg-white p-6 rounded-md shadow-md w-[100%] md:max-w-[600px] lg:max-w-[100%] mt-10 lg:mt-[2%] 2xl:mt-[.9vw]">
         <h2 className="text-lg font-bold mb-4 text-green-700">Frequently Asked Questions</h2>
         {faqData.map((item, idx) => (<AccordionItem key={idx} question={item.question} answer={item.answer} />))}
     </div>

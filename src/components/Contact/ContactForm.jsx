@@ -35,7 +35,7 @@ const ContactForm = () => {
     //     }
     // }
     return (
-        <section className="mt-10 bg-white rounded-md shadow-md p-6 w-[100%] md:w-[600px]">
+        <section className="mt-10 lg:mt-[2%] 2xl:mt-[.9vw] bg-white rounded-md shadow-md p-6 w-[100%] md:w-[600px] lg:w-[100%]">
             <h3 className="font-bold text-lg mb-[10px] text-green-700">Send Message</h3>
             <form className="flex flex-col text-sm">
                 <div><CustomInput htmlFor={'from_name'} text={'Full Name'} type={'text'} id={'user_name'} name={'from_name'} required /></div>
