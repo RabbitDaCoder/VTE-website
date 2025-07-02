@@ -8,16 +8,16 @@ const  SocialLinks = ({className}) => {
             <p className="text-sm text-green-700">Stay updated with the latest news, events, and announcements from the Faculty of Vocational and Technical Education.</p>
             <div className="flex flex-row gap-x-[20px] text-3xl items-center pt-[15px]">
                 <a to={"/"} className="p-2 bg-green-50 rounded-full hover:bg-green-100 transition duration-2000 ease-in-out">
-                    <FaFacebookF className="text-xl text-green-700" />
+                    <FaFacebookF className="text-xl text-green-700 cursor-not-allowed" />
                 </a>
                 <a to={"/"} className="p-2 bg-green-50 rounded-full hover:bg-green-100 transition duration-2000 ease-in-out">
-                    <FaXTwitter className="text-xl text-green-700" /> 
+                    <FaXTwitter className="text-xl text-green-700 cursor-not-allowed" /> 
                 </a>
                 <a to={"/"} className="p-2 bg-green-50 rounded-full hover:bg-green-100 transition duration-2000 ease-in-out">
-                    <FaInstagram className="text-xl text-green-700" />
+                    <FaInstagram className="text-xl text-green-700 cursor-not-allowed" />
                 </a>
                 <a to={"/"} className="p-2 bg-green-50 rounded-full hover:bg-green-100 transition duration-2000 ease-in-out">
-                    <FaLinkedinIn className="text-xl text-green-700" />
+                    <FaLinkedinIn className="text-xl text-green-700 cursor-not-allowed" />
                 </a>
             </div>
         </div>        
