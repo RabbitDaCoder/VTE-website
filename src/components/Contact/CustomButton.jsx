@@ -5,7 +5,7 @@ const CustomButton = ({ text, onClick, className, href, ...otherProps }) => {
 
     if (href) {
         return (
-            <a href={href} className={combinedClassName} {...otherProps}>
+            <a href={href} target={'_blank'} className={combinedClassName} {...otherProps}>
                 {text}
             </a>
         )
