@@ -1,11 +1,19 @@
 import React from 'react';
 
-const CustomButton = ({ text, onClick, className, ...otherProps }) => {
+const CustomButton = ({ text, onClick, className, href, ...otherProps }) => {
     const combinedClassName = `${className}`.trim();
+
+    if (href) {
+        return (
+            <a href={href} className={combinedClassName} {...otherProps}>
+                {text}
+            </a>
+        )
+    }
 
     return (
         <button className={combinedClassName} onClick={onClick} {...otherProps}>
-            {text}
+          {text}
         </button>
     )
 }
