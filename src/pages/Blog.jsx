@@ -1,19 +1,11 @@
 // Blog.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { blogs } from "../api/data";
+import { blogs,departmentCategory } from "../api/data";
 import BlogCard from "../components/BlogCard";
 import Pagination from "../components/Pagination";
 import Filter from "../components/Filter";
 import { FaNewspaper } from "react-icons/fa";
-
-const categories = [
-  "Quantum",
-  "AI",
-  "Machine Learning",
-  "Technology",
-  "Future",
-];
 
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -44,7 +36,7 @@ const Blog = () => {
       <div className="w-full bg-gradient-to-br from-green-50 via-white to-green-100 p-6">
         <div className="flex flex-col justify-between  gap-4">
           <Filter
-            categories={categories}
+            categories={departmentCategory}
             selected={selectedCategory}
             onSelect={setSelectedCategory}
           />

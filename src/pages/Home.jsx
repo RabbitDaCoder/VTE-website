@@ -227,7 +227,7 @@ const Home = () => {
                   {blog.content}
                 </p>
                 <Link
-                  to={`/blog/${blog.slug}`}
+                  to={`/blog/${blog.id}`}
                   className="mt-auto text-green-700 font-semibold hover:underline text-left w-fit"
                 >
                   See More

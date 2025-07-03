@@ -31,10 +31,17 @@ import medicine from "../../public/images/departments/medicine.jpg";
 import physics from "../../public/images/departments/physics.jpg";
 import blogImg1 from "../../public/images/blogs/blogImg.jpg";
 
-import eventsImg2 from "../../public/images/events/eventsImg-2.jpg";
+
 import eventsImg from "../../public/images/events/eventsImg-1.jpg";
-import eventsImg3 from "../../public/images/events/eventsImg-3.jpg";
+
 import { generateID } from "../utils/generateID";
+export const departmentCategory = [
+  "Computer Science",
+  "Mathematics",
+  "Physics",
+  "Chemistry",
+  "Biological Sciences",
+];
 export const departments = [
   {
     id: 1,
@@ -302,7 +309,6 @@ This blog explores its applications beyond cryptocurrencies, including supply ch
 - Real-world use cases
 - The future of decentralized tech`,
   },
-  // Add more blogs with unique images and content as needed...
 ];
 export const notices = [
   {
@@ -355,21 +361,130 @@ export const events = [
     title: "How to become an entrepreneur & Self dependent",
     description: "Convocation Ceremony",
     date: "2025-02-26T10:13:00",
+    department: "Business Administration",
     image: eventsImg,
+    content:
+      "Join us for an inspiring convocation ceremony focused on entrepreneurship and self-dependence. Learn from successful entrepreneurs and discover practical steps to start your own venture.",
   },
   {
     id: 2,
     title: "Leadership in Modern Times",
     description: "Convocation Ceremony",
     date: "2025-04-05T12:16:00",
-    image: eventsImg2,
+    department: "Management",
+    image: eventsImg,
+    content:
+      "This convocation ceremony will explore the qualities and skills needed for effective leadership in today's fast-changing world. Network with industry leaders and gain valuable insights.",
   },
   {
     id: 3,
     title: "Innovation in Technology",
     description: "Tech Meetup",
     date: "2025-06-30T09:14:00",
-    image: eventsImg3,
+    department: "Computer Science",
+    image: eventsImg,
+    content:
+      "A tech meetup dedicated to the latest innovations in technology. Engage with tech enthusiasts, attend workshops, and see live demos of cutting-edge solutions.",
+  },
+  {
+    id: 4,
+    title: "Tech Symposium 2025",
+    department: "Computer Science",
+    date: "2025-08-02T10:00:00",
+    image: eventsImg,
+    description: "A gathering of minds in tech.",
+    content:
+      "Join the brightest minds in technology for a day of talks, networking, and innovation at the Tech Symposium 2025.",
+  },
+  {
+    id: 5,
+    title: "AI & Robotics Expo",
+    department: "Computer Science",
+    date: "2025-10-15T14:00:00",
+    image: eventsImg,
+    description: "Exploring future technologies and AI innovations.",
+    content:
+      "Experience the future at the AI & Robotics Expo. See the latest in artificial intelligence and robotics, with live demos and expert panels.",
+  },
+  {
+    id: 6,
+    title: "Math Carnival",
+    department: "Mathematics",
+    date: "2025-09-12T11:00:00",
+    image: eventsImg,
+    description: "A celebration of numbers and formulas.",
+    content:
+      "Celebrate the beauty of mathematics with games, puzzles, and interactive sessions at the Math Carnival.",
+  },
+  {
+    id: 7,
+    title: "Statistics & Probability Workshop",
+    department: "Mathematics",
+    date: "2025-11-05T13:30:00",
+    image: eventsImg,
+    description: "Hands-on learning for data and chance lovers.",
+    content:
+      "Dive deep into statistics and probability with hands-on workshops and real-world data challenges.",
+  },
+  {
+    id: 8,
+    title: "Physics in Everyday Life",
+    department: "Physics",
+    date: "2025-07-20T09:00:00",
+    image: eventsImg,
+    description: "Discover how physics powers our world.",
+    content:
+      "Explore the wonders of physics in daily life through fun experiments and engaging talks.",
+  },
+  {
+    id: 9,
+    title: "Astrophysics Lecture Series",
+    department: "Physics",
+    date: "2025-10-01T15:00:00",
+    image: eventsImg,
+    description: "Dive into space, time, and celestial bodies.",
+    content:
+      "Join leading astrophysicists as they unravel the mysteries of the universe in this special lecture series.",
+  },
+  {
+    id: 10,
+    title: "ChemFest 2025",
+    department: "Chemistry",
+    date: "2025-09-22T12:00:00",
+    image: eventsImg,
+    description: "Chemistry exhibition and interactive sessions.",
+    content:
+      "Participate in ChemFest 2025 for exciting chemistry experiments, exhibitions, and interactive learning.",
+  },
+  {
+    id: 11,
+    title: "Organic Chemistry Bootcamp",
+    department: "Chemistry",
+    date: "2025-11-10T16:00:00",
+    image: eventsImg,
+    description: "Get ready to master organic reactions.",
+    content:
+      "Master organic chemistry with intensive sessions and expert guidance at the Organic Chemistry Bootcamp.",
+  },
+  {
+    id: 12,
+    title: "BioCon 2025",
+    department: "Biological Sciences",
+    date: "2025-08-18T10:30:00",
+    image: eventsImg,
+    description: "Conference on biological advances and research.",
+    content:
+      "Join researchers and students at BioCon 2025 to discuss the latest advances in biological sciences.",
+  },
+  {
+    id: 13,
+    title: "Genetics for the Future",
+    department: "Biological Sciences",
+    date: "2025-12-03T13:00:00",
+    image: eventsImg,
+    description: "Explore the future of genes and medicine.",
+    content:
+      "Discover the future of genetics and medicine with talks from leading scientists and hands-on workshops.",
   },
 ];
 

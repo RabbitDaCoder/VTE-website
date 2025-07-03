@@ -26,13 +26,12 @@ const Header = () => {
           </Link>
           <nav className="mt-2">
             <ul className="lg:flex hidden space-x-4 text-gray-700 items-center font-semibold">
-              <Link to={"/about"}>About</Link>
+              <Link to={"/departments"}>Faculty Members</Link>
               <Link to={"/blog"}>Blog</Link>
-              <Link to={"/contact"}>Contact</Link>
-              <Link to={"/departments"}>Departments</Link>
               <Link to={"/notice"}>Notice</Link>
-              <Link to={"/academica"}>Academia</Link>
               <Link to={"/events"}>Events</Link>
+              <Link to={"/about"}>About</Link>
+              <Link to={"/contact"}>Contact</Link>
             </ul>
           </nav>
           <div className="lg:flex hidden">
@@ -75,23 +74,14 @@ const Header = () => {
         <nav className="mt-6 px-4">
           <ul className="space-y-4 font-semibold text-green-800">
             <li>
-              <Link to={"/about"} onClick={handleCloseMenu}>
-                About
+              <Link to={"/departments"} onClick={handleCloseMenu}>
+                Faculty Members
               </Link>
             </li>
+
             <li>
               <Link to={"/blog"} onClick={handleCloseMenu}>
                 Blog
-              </Link>
-            </li>
-            <li>
-              <Link to={"/contact"} onClick={handleCloseMenu}>
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link to={"/departments"} onClick={handleCloseMenu}>
-                Departments
               </Link>
             </li>
             <li>
@@ -99,14 +89,20 @@ const Header = () => {
                 Notice
               </Link>
             </li>
-            <li>
-              <Link to={"/academica"} onClick={handleCloseMenu}>
-                Academia
-              </Link>
-            </li>
+
             <li>
               <Link to={"/events"} onClick={handleCloseMenu}>
                 Events
+              </Link>
+            </li>
+            <li>
+              <Link to={"/about"} onClick={handleCloseMenu}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to={"/contact"} onClick={handleCloseMenu}>
+                Contact
               </Link>
             </li>
           </ul>

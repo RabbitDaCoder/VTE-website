@@ -1,11 +1,7 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
 import Header from "./components/Header.jsx";
-<<<<<<< HEAD
 import Footer from "./components/Footer.jsx";
 import { useEffect } from "react";
-=======
-// import Footer from "./components/Footer.jsx";
->>>>>>> origin/stephen
 function App() {
   const { pathname } = useLocation();
 
@@ -18,7 +14,7 @@ function App() {
       <div className="w-full h-full">
         <Outlet />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
