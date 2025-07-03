@@ -24,7 +24,7 @@ const Events = () => {
         </p>
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-        {formattedEvents.map((event) => (
+        {formattedEvents.slice(0, 3).map((event) => (
           <div
             key={event.id}
             className="bg-white rounded-2xl overflow-hidden shadow border border-green-100"

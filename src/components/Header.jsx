@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { LuMoveRight, LuAlignLeft, LuX } from "react-icons/lu";
-
+import logo from "../../public/logo.png";
 //todo: add sticky to the header
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -22,10 +22,14 @@ const Header = () => {
             to={"/"}
             className="text-2xl font-extrabold tracking-wide text-green-700 drop-shadow-sm"
           >
-            <div>VTE</div>
+            <div>
+              {" "}
+              <img src={logo} alt="VTE Logo" className="h-10 w-auto" />
+            </div>
           </Link>
           <nav className="mt-2">
             <ul className="lg:flex hidden space-x-4 text-gray-700 items-center font-semibold">
+              <Link to={"/"}>Home</Link>
               <Link to={"/departments"}>Faculty Members</Link>
               <Link to={"/blog"}>Blog</Link>
               <Link to={"/notice"}>Notice</Link>
@@ -73,6 +77,11 @@ const Header = () => {
         </div>
         <nav className="mt-6 px-4">
           <ul className="space-y-4 font-semibold text-green-800">
+            <li>
+              <Link to={"/"} onClick={handleCloseMenu}>
+                Home
+              </Link>
+            </li>
             <li>
               <Link to={"/departments"} onClick={handleCloseMenu}>
                 Faculty Members

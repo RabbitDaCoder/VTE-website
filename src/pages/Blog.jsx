@@ -1,11 +1,19 @@
 // Blog.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { blogs,departmentCategory } from "../api/data";
+import { blogs } from "../api/data";
 import BlogCard from "../components/BlogCard";
 import Pagination from "../components/Pagination";
 import Filter from "../components/Filter";
 import { FaNewspaper } from "react-icons/fa";
+
+// Collect all unique tags for filtering
+const allTags = [
+  "All",
+  ...Array.from(
+    new Set(blogs.flatMap((b) => (Array.isArray(b.tags) ? b.tags : [])))
+  ),
+];
 
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,7 +23,9 @@ const Blog = () => {
   const filteredBlogs =
     selectedCategory === "All"
       ? blogs
-      : blogs.filter((b) => b.tags.includes(selectedCategory));
+      : blogs.filter(
+          (b) => Array.isArray(b.tags) && b.tags.includes(selectedCategory)
+        );
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -36,7 +46,7 @@ const Blog = () => {
       <div className="w-full bg-gradient-to-br from-green-50 via-white to-green-100 p-6">
         <div className="flex flex-col justify-between  gap-4">
           <Filter
-            categories={departmentCategory}
+            categories={allTags}
             selected={selectedCategory}
             onSelect={setSelectedCategory}
           />

@@ -7,7 +7,7 @@ import {
   FaXTwitter,
   FaLinkedinIn,
 } from "react-icons/fa6";
-
+import logo from "../../public/logo.png"; // Adjust path as necessary
 const Footer = () => {
   return (
     <footer className="px-0 py-0 bg-gradient-to-tr from-green-50 via-white to-green-100 border-t border-stone-200">
@@ -45,7 +45,7 @@ const Footer = () => {
               to={"/"}
               className="text-3xl font-extrabold tracking-wide text-green-700 drop-shadow-sm"
             >
-              VTE
+              <img src={logo} alt="VTE Logo" className="h-10 w-auto" />
             </Link>
             <div className="text-base text-gray-600">
               We believe in the power of play to foster creativity,
