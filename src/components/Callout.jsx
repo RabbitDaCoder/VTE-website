@@ -1,9 +1,9 @@
 import React from "react";
-
+import calloutImage from "/images/VTE-2025.webp";
 const Callout = () => (
-  <div className="relative h-80 md:h-[420px] mt-20 flex items-center justify-center overflow-hidden shadow-2xl border border-green-200">
+  <div className="relative h-96 md:h-[420px] mt-20 flex items-center justify-center overflow-hidden shadow-2xl border border-green-200">
     <img
-      src="/images/VTE-2025.webp"
+      src={calloutImage}
       alt="VTE Conference Background"
       className="absolute inset-0 w-full h-full object-cover object-center scale-105 blur-[2px] brightness-75"
       style={{ filter: "contrast(1.1) saturate(1.2)" }}

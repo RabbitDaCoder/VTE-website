@@ -149,11 +149,13 @@ const NoticeDetails = () => {
                 {notice.attachments.map((attachment, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between bg-green-50 p-4 rounded-lg border border-green-100"
+                    className="flex flex-col lg:flex-row items-start gap-3  lg:items-center lg:justify-between bg-green-50 p-4 rounded-lg border border-green-100"
                   >
                     <div className="flex items-center gap-2">
                       <LuDownload className="text-green-600" />
-                      <span className="font-medium">{attachment.name}</span>
+                      <span className="font-medium text-sm lg:text-base">
+                        {attachment.name}
+                      </span>
                       <span className="text-xs text-gray-500">
                         ({attachment.size})
                       </span>

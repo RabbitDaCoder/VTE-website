@@ -75,7 +75,7 @@ const Notice = () => {
 
       {/* Pinned Notice Banner - Enhanced */}
       <section className="px-4">
-        <div className="relative h-auto md:h-[300px] bg-gradient-to-r from-green-100 via-green-50 to-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row items-stretch border border-green-200">
+        <div className="relative h-auto md:h-[380px] bg-gradient-to-r from-green-100 via-green-50 to-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row items-stretch border border-green-200">
           <div className="absolute left-6 top-6 text-green-600 text-3xl z-20">
             <LuPin className="animate-bounce" />
           </div>

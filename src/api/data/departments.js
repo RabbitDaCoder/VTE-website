@@ -48,8 +48,15 @@ export const departments = [
         "ABE 506: Agricultural Economics and Policy",
       ],
       blogIds: [4, 5],
-      eventIds: [2, 5]
+      eventIds: [2, 5],
     },
+    gallery: [
+      "/images/departments/agriculture/gallery-1.jpg",
+      "/images/departments/agriculture/gallery-2.jpg",
+      "/images/departments/agriculture/gallery-3.jpg",
+      "/images/departments/agriculture/gallery-4.jpg",
+      "/images/departments/agriculture/gallery-5.jpg",
+    ],
   },
   {
     id: 2,
@@ -85,8 +92,15 @@ export const departments = [
         "BED 505: Business Communication Methods",
       ],
       blogIds: [2, 3],
-      eventIds: [1, 3]
+      eventIds: [1, 3],
     },
+    gallery: [
+      "/images/departments/business/gallery-1.jpg",
+      "/images/departments/business/gallery-2.jpg",
+      "/images/departments/business/gallery-3.jpg",
+      "/images/departments/business/gallery-4.jpg",
+      "/images/departments/business/gallery-5.jpg",
+    ],
   },
   {
     id: 3,
@@ -122,8 +136,15 @@ export const departments = [
         "CRE 506: Digital Literacy and Citizenship",
       ],
       blogIds: [1, 4],
-      eventIds: [3, 4]
+      eventIds: [3, 4],
     },
+    gallery: [
+      "/images/departments/computer/gallery-1.jpg",
+      "/images/departments/computer/gallery-2.jpg",
+      "/images/departments/computer/gallery-3.jpg",
+      "/images/departments/computer/gallery-4.jpg",
+      "/images/departments/computer/gallery-5.jpg",
+    ],
   },
   {
     id: 4,
@@ -159,8 +180,15 @@ export const departments = [
         "HHE 505: Sustainable Living Practices",
       ],
       blogIds: [3, 5],
-      eventIds: [5, 7]
+      eventIds: [5, 7],
     },
+    gallery: [
+      "/images/departments/home-economics/gallery-1.jpg",
+      "/images/departments/home-economics/gallery-2.jpg",
+      "/images/departments/home-economics/gallery-3.jpg",
+      "/images/departments/home-economics/gallery-4.jpg",
+      "/images/departments/home-economics/gallery-5.jpg",
+    ],
   },
   {
     id: 5,
@@ -196,8 +224,15 @@ export const departments = [
         "ITE 506: Technical Education Methods",
       ],
       blogIds: [1, 2],
-      eventIds: [4, 6]
+      eventIds: [4, 6],
     },
+    gallery: [
+      "/images/departments/industrial/gallery-1.jpg",
+      "/images/departments/industrial/gallery-2.jpg",
+      "/images/departments/industrial/gallery-3.jpg",
+      "/images/departments/industrial/gallery-4.jpg",
+      "/images/departments/industrial/gallery-5.jpg",
+    ],
   },
   {
     id: 6,
@@ -233,8 +268,15 @@ export const departments = [
         "VEE 505: Financial Literacy Education",
       ],
       blogIds: [2, 5],
-      eventIds: [1, 8]
+      eventIds: [1, 8],
     },
+    gallery: [
+      "/images/departments/vocational/gallery-1.jpg",
+      "/images/departments/vocational/gallery-2.jpg",
+      "/images/departments/vocational/gallery-3.jpg",
+      "/images/departments/vocational/gallery-4.jpg",
+      "/images/departments/vocational/gallery-5.jpg",
+    ],
   },
 ];
 
@@ -246,17 +288,17 @@ export const getDepartments = () => {
 // Function to get a department by ID
 export const getDepartmentById = (id) => {
   const numId = parseInt(id);
-  return departments.find(dept => dept.id === numId);
+  return departments.find((dept) => dept.id === numId);
 };
 
 // Save departments to localStorage for persistence
 export const saveDepartmentsToStorage = () => {
-  localStorage.setItem('departments', JSON.stringify(departments));
+  localStorage.setItem("departments", JSON.stringify(departments));
 };
 
 // Load departments from localStorage
 export const loadDepartmentsFromStorage = () => {
-  const storedDepartments = localStorage.getItem('departments');
+  const storedDepartments = localStorage.getItem("departments");
   if (storedDepartments) {
     return JSON.parse(storedDepartments);
   }
@@ -265,7 +307,7 @@ export const loadDepartmentsFromStorage = () => {
 
 // Initialize localStorage with departments data if not already present
 export const initDepartmentsStorage = () => {
-  if (!localStorage.getItem('departments')) {
+  if (!localStorage.getItem("departments")) {
     saveDepartmentsToStorage();
   }
 };

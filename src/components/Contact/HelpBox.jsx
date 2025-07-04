@@ -10,7 +10,7 @@ const HelpBox = () => {
   return (
     <motion.div
       ref={helpBoxRef}
-      className="bg-white text-green-700 p-6 rounded-md shadow-md mt-10 lg:mt-[2%] 2xl:mt-[.9vw] w-[100%] md:max-w-[600px] lg:max-w-[100%] lg:h-[262px]"
+      className="bg-white text-green-700 p-6 rounded-md shadow-md mt-10 lg:mt-[2%] 2xl:mt-[.9vw] w-[100%] md:max-w-[600px] lg:max-w-[100%] h-[300px] "
       initial="hidden"
       animate={helpBoxInView ? "visible" : "hidden"}
       variants={fadeInUp}

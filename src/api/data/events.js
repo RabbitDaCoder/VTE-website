@@ -98,6 +98,66 @@ export const events = [
     content:
       "The Educational Leadership Symposium focuses on developing effective leadership skills for educational settings. Topics include strategic planning for educational institutions, managing educational change, building effective teams, and promoting inclusive education. The symposium is designed for current and aspiring educational leaders, including department heads, school administrators, and educational policy makers.",
   },
+  {
+    id: 9,
+    title: "Student Innovation Challenge",
+    description: "Showcase your creative solutions to real-world problems",
+    date: "2024-12-15T13:00:00", // Future date
+    department: "Computer and Robotics Education",
+    image: eventsImg,
+    location: "Innovation Hub, Main Campus",
+    upcoming: new Date("2024-12-15T13:00:00") > new Date(),
+    content:
+      "The Student Innovation Challenge invites students from all departments to present their innovative solutions to real-world problems. Projects can address educational challenges, community needs, or industry problems. Winners will receive funding to develop their ideas further and mentorship from industry professionals. This is a great opportunity to apply your knowledge, enhance your portfolio, and make a positive impact.",
+  },
+  {
+    id: 10,
+    title: "Career Development Workshop",
+    description: "Prepare for your professional journey after graduation",
+    date: "2024-11-20T10:00:00", // Future date
+    department: "All Departments",
+    image: eventsImg,
+    location: "Faculty Auditorium",
+    upcoming: new Date("2024-11-20T10:00:00") > new Date(),
+    content:
+      "The Career Development Workshop is designed to help students prepare for their professional journey after graduation. The workshop covers resume building, interview skills, professional networking, and job search strategies. Industry professionals and alumni will share their experiences and provide valuable insights. Don't miss this opportunity to enhance your employability and connect with potential employers.",
+  },
+  {
+    id: 11,
+    title: "Educational Technology Showcase",
+    description: "Explore the latest innovations in educational technology",
+    date: "2025-02-10T14:00:00", // Far future date to ensure it's upcoming
+    department: "Computer and Robotics Education",
+    image: eventsImg,
+    location: "Technology Innovation Center",
+    upcoming: true, // Explicitly set to true
+    content:
+      "The Educational Technology Showcase brings together innovators, educators, and students to explore cutting-edge technologies transforming education. Experience hands-on demonstrations of virtual reality learning environments, AI-powered educational tools, and innovative teaching platforms. Connect with technology providers and learn how to integrate these tools into your teaching practice.",
+  },
+  {
+    id: 12,
+    title: "Leadership Development Conference",
+    description: "Building the next generation of educational leaders",
+    date: "2025-03-15T09:30:00", // Far future date to ensure it's upcoming
+    department: "All Departments",
+    image: eventsImg,
+    location: "Faculty Conference Center",
+    upcoming: true, // Explicitly set to true
+    content:
+      "The Leadership Development Conference is designed for aspiring educational leaders, department heads, and administrators. The conference features workshops on strategic planning, team management, conflict resolution, and educational policy implementation. Learn from experienced leaders and develop the skills needed to advance your career in educational leadership.",
+  },
+  {
+    id: 13,
+    title: "Research Methodology Workshop",
+    description: "Essential skills for academic and applied research",
+    date: "2025-01-20T10:00:00", // Far future date to ensure it's upcoming
+    department: "All Departments",
+    image: eventsImg,
+    location: "Research Center, Main Campus",
+    upcoming: true, // Explicitly set to true
+    content:
+      "This comprehensive workshop covers both quantitative and qualitative research methodologies, research design, data collection techniques, analysis methods, and ethical considerations. Designed for graduate students, faculty members, and researchers, this workshop will enhance your research capabilities and help you produce high-quality academic work.",
+  },
 ];
 
 // Function to get events
@@ -108,25 +168,44 @@ export const getEvents = () => {
 // Function to get an event by ID
 export const getEventById = (id) => {
   const numId = parseInt(id);
-  return events.find(event => event.id === numId);
+  return events.find((event) => event.id === numId);
 };
 
 // Function to get upcoming events
 export const getUpcomingEvents = (limit = 3) => {
-  return events
-    .filter(event => new Date(event.date) > new Date())
+  const currentDate = new Date();
+
+  // For debugging
+  console.log("Current date:", currentDate);
+
+  const upcomingEventsArray = events
+    .filter((event) => {
+      const eventDate = new Date(event.date);
+      // For debugging
+      console.log(
+        `Event: ${event.title}, Date: ${eventDate}, Is upcoming: ${
+          eventDate > currentDate
+        }`
+      );
+      return eventDate > currentDate;
+    })
     .sort((a, b) => new Date(a.date) - new Date(b.date))
     .slice(0, limit);
+
+  // For debugging
+  console.log("Upcoming events count:", upcomingEventsArray.length);
+
+  return upcomingEventsArray;
 };
 
 // Save events to localStorage for persistence
 export const saveEventsToStorage = () => {
-  localStorage.setItem('events', JSON.stringify(events));
+  localStorage.setItem("events", JSON.stringify(events));
 };
 
 // Load events from localStorage
 export const loadEventsFromStorage = () => {
-  const storedEvents = localStorage.getItem('events');
+  const storedEvents = localStorage.getItem("events");
   if (storedEvents) {
     return JSON.parse(storedEvents);
   }
@@ -135,7 +214,7 @@ export const loadEventsFromStorage = () => {
 
 // Initialize localStorage with events data if not already present
 export const initEventsStorage = () => {
-  if (!localStorage.getItem('events')) {
+  if (!localStorage.getItem("events")) {
     saveEventsToStorage();
   }
 };

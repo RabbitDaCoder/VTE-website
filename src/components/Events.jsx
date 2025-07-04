@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import {
@@ -18,13 +18,14 @@ import useDateFormatter from "../hooks/useDateFormatter";
 
 const Events = () => {
   const [visibleEvents, setVisibleEvents] = useState(3);
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
   const eventsRef = useRef(null);
   const eventsInView = useInView(eventsRef, { once: true, threshold: 0.1 });
 
-  // Get only upcoming events
-  const upcomingEvents = events
-    .filter((event) => new Date(event.date) > new Date())
-    .sort((a, b) => new Date(a.date) - new Date(b.date));
+  useEffect(() => {
+    console.log("Setting test events:", events);
+    setUpcomingEvents(events);
+  }, []);
 
   const displayedEvents = upcomingEvents.slice(0, visibleEvents);
 
@@ -40,6 +41,7 @@ const Events = () => {
       animate={eventsInView ? "visible" : "hidden"}
       variants={fadeInUp}
     >
+      {/* Section header */}
       <motion.div className="text-center mb-10" variants={fadeInUp}>
         <motion.span
           className="inline-block px-4 py-1 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-4"
@@ -61,6 +63,7 @@ const Events = () => {
         </motion.p>
       </motion.div>
 
+      {/* Display events or no events message */}
       {upcomingEvents.length === 0 ? (
         <div className="text-center py-10 bg-green-50 rounded-xl max-w-2xl mx-auto">
           <p className="text-gray-600">

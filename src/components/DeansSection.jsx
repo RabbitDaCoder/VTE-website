@@ -1,13 +1,13 @@
 import React from "react";
-
+import DeanImage from "../../public/deanImg.jpeg";
 const DeansSection = () => {
   return (
     <section className="py-20 bg-gray-50 ">
       <div className="container mx-auto px-6 ">
-        <div className="flex flex-wrap items-center ">
+        <div className="flex flex-wrap items-start ">
           <div className="w-full md:w-1/3 px-4 mb-8 md:mb-0">
             <img
-              src="/DEAN PIC.jpeg"
+              src={DeanImage}
               alt="Dean's Picture"
               className="rounded-lg shadow-lg mx-auto w-full h-120 md:h-120 object-fill"
             />
