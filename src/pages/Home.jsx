@@ -73,7 +73,7 @@ const Home = () => {
       <HelmetSEO page="home" />
       {/* Hero Section */}
       <motion.div
-        className="w-full lg:h-[480px] h-[600px] bg-cover bg-center relative rounded-b-3xl shadow-lg overflow-hidden"
+        className="w-full lg:h-[480px] h-[650px] bg-cover bg-center relative rounded-b-3xl shadow-lg overflow-hidden"
         style={{ backgroundImage: `url(${bgImg})` }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -95,7 +95,7 @@ const Home = () => {
               Vocational and Technical Education
             </motion.h1>
             <motion.div
-              className="flex items-center flex-col md:flex-row gap-4 justify-center"
+              className="flex items-center  md:flex-row gap-4 justify-center"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.8 }}
