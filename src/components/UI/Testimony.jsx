@@ -85,13 +85,13 @@ const Testimonials = () => {
         {/* Custom navigation buttons */}
         <button
           ref={prevRef}
-          className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 z-10 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none"
+          className="absolute left-0 lg:left-6 top-1/2 -translate-y-1/2 z-10 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none"
         >
           <LuArrowLeft className="text-xl" />
         </button>
         <button
           ref={nextRef}
-          className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 z-10 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none"
+          className="absolute right-0 lg:right-6 top-1/2 -translate-y-1/2 z-10 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none"
         >
           <LuArrowRight className="text-xl" />
         </button>
