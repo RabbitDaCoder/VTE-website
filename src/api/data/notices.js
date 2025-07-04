@@ -1,5 +1,5 @@
 import { LuPin, LuFileText } from "react-icons/lu";
-import pinnedImg from "../../assets/images/hero-bg.jpg";
+import pinnedImg from "/images/hero/hero-bg.jpg";
 
 // Notices data with enhanced structure
 export const notices = [
@@ -94,6 +94,29 @@ export const notices = [
     department: "All Departments",
     category: "Administrative",
   },
+  {
+    id: 8,
+    title: "🌿 VESA CLEAN-UP EXERCISE 🌿",
+    content:
+      "Dear VESAITES,\n\nIn the spirit of unity, responsibility, and love for our environment, VESA will be holding a Clean-Up Exercise on Saturday, 5th July 2025.\n\nThis is more than just a sanitation event, it's a call to action, a moment for us to come together as one family to give back to the space that holds our memories, our laughter, and our dreams. A clean environment is a healthy one, and every step you take that morning is a step toward a better future for us all.\n\nWe warmly invite every VESAITES to join us by 8:00 AM. Come with your energy, your smile, and your commitment to making a difference. Let's turn this day into a beautiful experience of service, fellowship, and impact.\n\nTogether, let's clean, connect, and create a better VESA!\n\nSigned:\nVESA Leadership Team",
+    summary:
+      "Join the VESA Clean-Up Exercise on Saturday, July 5th, 2025 at 8:00 AM. Let's work together to create a cleaner, healthier environment.",
+    date: "2024-07-10",
+    department: "All Departments",
+    category: "Student Activities",
+    author: "Miss Chioma",
+    readTime: 2,
+    attachments: [
+      {
+        name: "Clean_Up_Schedule.pdf",
+        size: "450 KB",
+      },
+      {
+        name: "Participation_Certificate.pdf",
+        size: "320 KB",
+      },
+    ],
+  },
 ];
 
 // Pinned notices with enhanced structure
@@ -120,6 +143,31 @@ export const pinnedNotices = [
       {
         name: "Training_Schedule.pdf",
         size: "420 KB",
+      },
+    ],
+  },
+  {
+    id: 102,
+    title: "🌿 VESA CLEAN-UP EXERCISE 🌿",
+    content:
+      "Dear VESAITES,\n\nIn the spirit of unity, responsibility, and love for our environment, VESA will be holding a Clean-Up Exercise on Saturday, 5th July 2025.\n\nThis is more than just a sanitation event, it's a call to action, a moment for us to come together as one family to give back to the space that holds our memories, our laughter, and our dreams. A clean environment is a healthy one, and every step you take that morning is a step toward a better future for us all.\n\nWe warmly invite every VESAITES to join us by 8:00 AM. Come with your energy, your smile, and your commitment to making a difference. Let's turn this day into a beautiful experience of service, fellowship, and impact.\n\nTogether, let's clean, connect, and create a better VESA!\n\nSigned:\nVESA Leadership Team",
+    summary:
+      "Join the VESA Clean-Up Exercise on Saturday, July 5th, 2025 at 8:00 AM. Let's work together to create a cleaner, healthier environment.",
+    image: pinnedImg,
+    button: "Register Now",
+    department: "All Departments",
+    date: "2024-07-10",
+    icon: LuPin,
+    author: "Miss Chioma",
+    readTime: 2,
+    attachments: [
+      {
+        name: "Clean_Up_Schedule.pdf",
+        size: "450 KB",
+      },
+      {
+        name: "Participation_Certificate.pdf",
+        size: "320 KB",
       },
     ],
   },

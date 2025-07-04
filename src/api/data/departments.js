@@ -6,11 +6,14 @@ import {
   LuFactory,
   LuRocket,
 } from "react-icons/lu";
-import computer from "../../../public/images/departments/computer.jpg";
-import mech from "../../../public/images/departments/mech.jpg";
-import civil from "../../../public/images/departments/civil.jpg";
-import medicine from "../../../public/images/departments/medicine.jpg";
-import physics from "../../../public/images/departments/physics.jpg";
+
+// For public folder images in Vite, use direct paths
+const CRE = "/images/departments/CRE/cre-4.jpg";
+const VEE = "/images/departments/VEE/vee-3.jpg";
+const BE = "/images/departments/BE/be-1.jpg";
+const HEC = "/images/departments/HEC/hec1.PNG";
+const AE = "/images/departments/AE/ae-1.PNG";
+const ITE = "/images/departments/ITE/ite2.PNG";
 
 // Departments data with sequential IDs
 export const departments = [
@@ -18,11 +21,11 @@ export const departments = [
     id: 1,
     name: "Agriculture and Bioresources Education",
     icon: LuLeaf,
-    image: computer,
+    image: AE,
     summary:
       "Cultivating knowledge and skills for sustainable agricultural development.",
     description:
-      "The Department of Agriculture and Bioresources Education prepares educators and professionals who will lead in sustainable agricultural practices, food security initiatives, and environmental stewardship. Our curriculum combines hands-on field experience with cutting-edge research in crop science, animal husbandry, and agricultural economics.",
+      "Agriculture Education is an interdisciplinary field focused on training individuals, particularly future educators and extension workers, in the science, practice, and sustainable management of agricultural systems and natural biological resources.",
     features: [
       "Sustainable Agriculture Practices",
       "Extension Education Methods",
@@ -34,18 +37,15 @@ export const departments = [
     details: {
       head: "Prof. Toochukwu E. Ejiofor",
       faculty: [
-        "Dr. Chika Eze - Crop Science",
-        "Prof. Adamu Ibrahim - Soil Science",
-        "Dr. Ngozi Okafor - Agricultural Economics",
-        "Dr. Emeka Nwankwo - Livestock Management",
+        "Dr. Crop Science",
+        "Prof. Soil Health",
+        "Dr. Animal Husbandry",
       ],
       coreCourses: [
-        "ABE 101: Introduction to Agricultural Education",
-        "ABE 203: Crop Production Systems",
-        "ABE 305: Soil Science and Management",
-        "ABE 402: Agricultural Extension Methods",
-        "ABE 504: Sustainable Farming Practices",
-        "ABE 506: Agricultural Economics and Policy",
+        "Agronomy Principles",
+        "Livestock Production",
+        "Agricultural Economics",
+        "Extension Methods",
       ],
       blogIds: [4, 5],
       eventIds: [2, 5],
@@ -62,11 +62,11 @@ export const departments = [
     id: 2,
     name: "Business Education",
     icon: LuBriefcase,
-    image: mech,
+    image: BE,
     summary:
-      "Developing business educators and professionals with entrepreneurial mindsets.",
+      "Equipping future business leaders and educators with essential economic and entrepreneurial skills.",
     description:
-      "The Department of Business Education focuses on preparing educators and professionals who can effectively teach business concepts, entrepreneurship, and office technology. Our graduates are equipped with both pedagogical skills and business acumen to excel in educational institutions and corporate settings.",
+      "Our Business Education department focuses on developing educators who can impart vital business acumen, financial literacy, and entrepreneurial spirit to the next generation.",
     features: [
       "Accounting Education",
       "Marketing Education",
@@ -76,20 +76,17 @@ export const departments = [
       "Information Management",
     ],
     details: {
-      head: "Prof. Chijioke Obi",
+      head: "Dr. E.O. Ugwuoke",
       faculty: [
-        "Dr. Emmanuel Obi - Entrepreneurship",
-        "Prof. Blessing Okoro - Accounting Education",
-        "Dr. Fatima Suleiman - Marketing Education",
-        "Dr. James Adegoke - Office Technology",
+        "Prof. Market Trends",
+        "Dr. Financial Literacy",
+        "Prof. Entrepreneurship Strategy",
       ],
       coreCourses: [
-        "BED 101: Foundations of Business Education",
-        "BED 202: Accounting for Educators",
-        "BED 304: Marketing Education",
-        "BED 401: Office Technology and Management",
-        "BED 503: Entrepreneurship Education",
-        "BED 505: Business Communication Methods",
+        "Principles of Business",
+        "Accounting for Educators",
+        "Marketing Fundamentals",
+        "Business Law",
       ],
       blogIds: [2, 3],
       eventIds: [1, 3],
@@ -106,11 +103,11 @@ export const departments = [
     id: 3,
     name: "Computer and Robotics Education",
     icon: LuCpu,
-    image: civil,
+    image: CRE,
     summary:
-      "Preparing educators for the digital age with expertise in computing and robotics.",
+      "Innovating teaching methods in computing, AI, and cutting-edge robotics.",
     description:
-      "The Department of Computer and Robotics Education focuses on developing educators who can effectively teach computing concepts, programming, and robotics in educational settings. Our curriculum combines technical knowledge with pedagogical approaches to prepare graduates for the evolving technological landscape in education.",
+      "This department is at the forefront of preparing educators to teach the dynamic fields of computer science and robotics, fostering computational thinking and practical engineering skills.",
     features: [
       "Programming Education",
       "Educational Robotics",
@@ -120,20 +117,22 @@ export const departments = [
       "AI in Education",
     ],
     details: {
-      head: "Prof. Tunde Bakare",
+      head: "Dr. Ifeoma B. Onah",
       faculty: [
-        "Dr. Chidi Onyeka - Educational Robotics",
-        "Prof. Amina Yusuf - Computer Science Education",
-        "Dr. Oluwaseun Adeyemi - Programming Education",
-        "Dr. Ngozi Okafor - Educational Technology",
+        "Prof. Ibezim Nnenna",
+        "Asso. Prof. Emma Nwangwu",
+        "Asso. Prof. C.J. Olelewe",
+        "Dr. Nick Eze",
+        "Dr. Chukwuma Mgboji",
+        "Dr. Charles Chiamogu",
       ],
       coreCourses: [
-        "CRE 101: Introduction to Computer Education",
-        "CRE 203: Programming for Educators",
-        "CRE 305: Educational Robotics",
-        "CRE 402: Computer Science Teaching Methods",
-        "CRE 504: AI and Machine Learning in Education",
-        "CRE 506: Digital Literacy and Citizenship",
+        "Software Development",
+        "Robotics Engineering",
+        "Hardware Maintenance",
+        "Networking",
+        "Cybersecurity",
+        "Artificial Intelligence",
       ],
       blogIds: [1, 4],
       eventIds: [3, 4],
@@ -148,13 +147,13 @@ export const departments = [
   },
   {
     id: 4,
-    name: "Home Economics & Hospitality Management Education",
+    name: "Home Economics and Hospitality Management",
     icon: LuHouse,
-    image: medicine,
+    image: HEC,
     summary:
-      "Fostering expertise in nutrition, family resources, and hospitality education.",
+      "Fostering expertise in family welfare, consumer science, and service industry leadership.",
     description:
-      "The Department of Home Economics and Hospitality Management Education prepares educators and professionals in the areas of food and nutrition, family resource management, and hospitality services. Our graduates excel in teaching these vital life skills and managing related programs in educational and community settings.",
+      "The Home Economics and Hospitality Management department offers a holistic approach to understanding individual, family, and community well-being, alongside rigorous training for careers in the vibrant hospitality sector.",
     features: [
       "Nutrition Education",
       "Family Resource Management",
@@ -164,20 +163,13 @@ export const departments = [
       "Sustainable Living",
     ],
     details: {
-      head: "Prof. Ngozi Okonkwo",
-      faculty: [
-        "Dr. Fatima Bello - Nutrition Education",
-        "Prof. Joseph Okafor - Hospitality Management",
-        "Dr. Chioma Eze - Family Resource Management",
-        "Dr. Aisha Mohammed - Textile and Clothing",
-      ],
+      head: "Asso. Prof. Amaka Chukwuone",
+      faculty: ["Prof. Ngozi. Eze", "Dr. A. Ezeanwu", "Dr. Patricia Kalu"],
       coreCourses: [
-        "HHE 101: Foundations of Home Economics Education",
-        "HHE 202: Nutrition Science and Education",
-        "HHE 304: Family Resource Management",
-        "HHE 401: Hospitality Services Management",
-        "HHE 503: Textile and Clothing Education",
-        "HHE 505: Sustainable Living Practices",
+        "Nutrition and Dietetics",
+        "Hospitality Operations",
+        "Family Resource Management",
+        "Textile Arts and Design",
       ],
       blogIds: [3, 5],
       eventIds: [5, 7],
@@ -194,11 +186,11 @@ export const departments = [
     id: 5,
     name: "Industrial Technical Education",
     icon: LuFactory,
-    image: physics,
+    image: ITE,
     summary:
-      "Building technical educators with expertise in industrial technologies.",
+      "Developing skilled educators for technical trades and industrial innovation.",
     description:
-      "The Department of Industrial Technical Education focuses on preparing educators and professionals in technical fields such as mechanical technology, electrical systems, and industrial design. Our graduates are equipped to teach technical skills and manage technical education programs in various educational settings.",
+      "Our Industrial Technical Education department is dedicated to training teachers and professionals in the practical skills and theoretical knowledge required for various technical and industrial fields.",
     features: [
       "Mechanical Technology",
       "Electrical Systems",
@@ -208,20 +200,17 @@ export const departments = [
       "Safety Education",
     ],
     details: {
-      head: "Prof. Ibrahim Mohammed",
+      head: "Asso. Prof. Jimoh Bakere",
       faculty: [
-        "Dr. Oluwaseun Adeyemi - Mechanical Technology",
-        "Prof. Chinedu Okeke - Electrical Systems",
-        "Dr. Chibuike Eze - Industrial Design",
-        "Dr. Adebola Johnson - Technical Education",
+        "Prof. Workshop Safety",
+        "Dr. Advanced Manufacturing",
+        "Prof. Vocational Didactics",
       ],
       coreCourses: [
-        "ITE 101: Foundations of Technical Education",
-        "ITE 203: Mechanical Technology",
-        "ITE 305: Electrical Systems and Applications",
-        "ITE 402: Industrial Design Principles",
-        "ITE 504: Workshop Organization and Management",
-        "ITE 506: Technical Education Methods",
+        "Technical Drawing",
+        "Electrical Systems",
+        "Automotive Technology",
+        "Welding and Fabrication",
       ],
       blogIds: [1, 2],
       eventIds: [4, 6],
@@ -238,11 +227,11 @@ export const departments = [
     id: 6,
     name: "Vocational and Entrepreneurship Education",
     icon: LuRocket,
-    image: computer,
+    image: VEE,
     summary:
-      "Fostering entrepreneurial mindsets and vocational skills for self-reliance.",
+      "Empowering students with practical skills and entrepreneurial mindset for self-reliance.",
     description:
-      "The Department of Vocational and Entrepreneurship Education focuses on developing educators and professionals who can teach practical vocational skills and entrepreneurial thinking. Our graduates excel in preparing others for self-employment, small business management, and vocational careers.",
+      "This department combines vocational training with entrepreneurial principles, preparing graduates to not only excel in specific trades but also to create and manage their own successful ventures.",
     features: [
       "Entrepreneurship Skills",
       "Small Business Management",
@@ -252,20 +241,17 @@ export const departments = [
       "Financial Literacy",
     ],
     details: {
-      head: "Prof. Chioma Okereke",
+      head: "Dr. Okereke",
       faculty: [
-        "Dr. Emeka Nwosu - Entrepreneurship Education",
-        "Prof. Aisha Bello - Small Business Management",
-        "Dr. Tunde Adeyemi - Vocational Skills Development",
-        "Dr. Folake Okonkwo - Financial Literacy",
+        "Prof. Startup Dynamics",
+        "Dr. Skill Acquisition",
+        "Prof. Microfinance",
       ],
       coreCourses: [
-        "VEE 101: Introduction to Vocational Education",
-        "VEE 202: Entrepreneurship Skills Development",
-        "VEE 304: Small Business Management",
-        "VEE 401: Vocational Skills Training",
-        "VEE 503: Business Incubation and Startups",
-        "VEE 505: Financial Literacy Education",
+        "Entrepreneurship Skills",
+        "Small Business Management",
+        "Vocational Skill Development",
+        "Financial Planning for Startups",
       ],
       blogIds: [2, 5],
       eventIds: [1, 8],

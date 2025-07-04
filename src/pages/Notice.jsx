@@ -1,7 +1,7 @@
 // VTE Faculty Notice Board Updated UI
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import bannerImg from "../assets/images/hero-bg.jpg";
+import bannerImg from "/images/hero/hero-bg.jpg";
 import { departments, downloads, allNotices, pinnedNotices } from "../api/data";
 import Pagination from "../components/Pagination";
 import Filter from "../components/Filter";

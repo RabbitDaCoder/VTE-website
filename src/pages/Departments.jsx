@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
-import VteLogoBackground from "../assets/images/hero-bg.jpg";
+import VteLogoBackground from "/images/hero/hero-bg.jpg";
 import { departments, studentPresidents } from "../api/data";
 import HelmetSEO from "../components/HelmetSEO.jsx";
 
@@ -56,7 +56,7 @@ const DepartmentsPage = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div className="absolute inset-0"></div>
         <div className="flex items-center justify-center h-full w-full relative z-10">
           <motion.div
             className="text-center"

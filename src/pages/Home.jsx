@@ -1,5 +1,5 @@
 import React from "react";
-import bgImg from "/images/home-bg.jpg";
+import bgImg from "/images/hero/home-bg.jpg";
 import { Link } from "react-router-dom";
 import { features, benefits, departments, blogs } from "../api/data.js";
 import {

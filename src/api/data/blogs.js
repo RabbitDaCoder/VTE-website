@@ -1,4 +1,5 @@
 import blogImg1 from "../../../public/images/blogs/blogImg.jpg";
+import blogImg2 from "../../../public/images/blogs/blogImg-2.jpg";
 
 // Initialize blogs with sequential IDs
 export const blogs = [
@@ -270,6 +271,54 @@ We explore pedagogical strategies, curriculum design, and assessment methods tha
   - Teaching data analytics skills
   - Cybersecurity awareness
   - Collaborations with tech companies`,
+  },
+  {
+    id: 16,
+    title:
+      "VESA Clean-Up Exercise: Building Community Through Environmental Stewardship",
+    slug: "vesa-clean-up-exercise-community-environmental-stewardship",
+    image: blogImg2,
+    tags: [
+      "Community Service",
+      "Environment",
+      "Student Activities",
+      "Campus Life",
+    ],
+    date: "2024-06-25",
+    author: "Miss Chioma",
+    content: `# VESA Clean-Up Exercise: Building Community Through Environmental Stewardship
+
+The Vocational Education Students Association (VESA) is organizing a campus-wide clean-up exercise scheduled for Saturday, July 5th, 2025. This initiative represents more than just a routine sanitation activity—it embodies our commitment to environmental responsibility and community building.
+
+## Why Environmental Stewardship Matters in Education
+
+Environmental consciousness is increasingly becoming an essential component of holistic education. As future educators and professionals in vocational and technical fields, VESA members understand that environmental responsibility is intertwined with professional ethics and community leadership.
+
+The clean-up exercise provides practical experience in:
+- Collaborative problem-solving
+- Project management and coordination
+- Community engagement
+- Environmental sustainability practices
+
+## Event Details
+
+**Date:** Saturday, July 5th, 2025
+**Time:** 8:00 AM - 12:00 PM
+**Meeting Point:** Faculty Main Entrance
+**What to Bring:** Gloves, water bottle, hat, sunscreen
+**Provided:** Cleaning tools, waste bags, refreshments
+
+## Building Community Through Shared Purpose
+
+This event offers an opportunity for students across all departments to work together toward a common goal. The relationships formed during such collaborative activities often extend beyond the event itself, creating networks that support academic and professional growth.
+
+## Join the Movement
+
+We invite all VESAITES to participate in this meaningful initiative. Your contribution, regardless of how small it may seem, makes a significant difference in our collective effort to maintain a clean, healthy, and inspiring learning environment.
+
+As the African proverb says, "If you want to go fast, go alone. If you want to go far, go together." Let's go far together in creating a sustainable and beautiful campus environment.
+
+Together, we clean. Together, we learn. Together, we grow.`,
   },
 ];
 

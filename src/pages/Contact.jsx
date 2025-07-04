@@ -5,7 +5,7 @@ import EmbeddedMap from "../components/Contact/EmbeddedMap";
 import SocialLinks from "../components/Contact/SocialLinks";
 import FAQSection from "../components/Contact/FAQSection";
 import HelpBox from "../components/Contact/HelpBox";
-import TempContactHeaderBgImage from "../assets/images/Temp_Contact_Header_Bg-Image.jpg";
+import TempContactHeaderBgImage from "/images/hero/Temp_Contact_Header_Bg-Image.jpg";
 import HelmetSEO from "../components/HelmetSEO.jsx";
 
 const Contact = () => {

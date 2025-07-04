@@ -118,9 +118,9 @@ const Blog = () => {
           <h2 className="text-2xl font-bold text-green-800 mb-6">
             Featured Article
           </h2>
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden h-[600px]">
             <div className="md:flex">
-              <div className="md:w-1/2">
+              <div className="md:w-1/2 h-full">
                 <img
                   src={featuredBlog.image}
                   alt={featuredBlog.title}

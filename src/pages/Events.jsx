@@ -5,7 +5,7 @@ import Pagination from "../components/Pagination";
 import { motion } from "framer-motion";
 import useDateFormatter from "../hooks/useDateFormatter";
 import { LuMapPin, LuClock2, LuSearch, LuCalendarDays } from "react-icons/lu";
-import heroImage from "/images/matric.JPG";
+import heroImage from "/images/events/matric.JPG";
 import { Link } from "react-router-dom";
 import Callout from "../components/Callout";
 import HelmetSEO from "../components/HelmetSEO";

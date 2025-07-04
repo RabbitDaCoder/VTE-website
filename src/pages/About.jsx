@@ -10,7 +10,7 @@ import {
   bounceIn,
 } from "../utils/AnimationVariants.js";
 import HelmetSEO from "../components/HelmetSEO.jsx";
-import VteLogoBackground from "/images/VTE-2025.webp";
+import VteLogoBackground from "/images/hero/hero-bg.jpg";
 import DeansSection from "../components/DeansSection.jsx";
 import {
   FaHistory,
