@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NotFoundImage from "/images/notfound1.jpg";
 import { LuCompass, LuArrowLeft } from "react-icons/lu";
+import HelmetSEO from "./HelmetSEO";
 
 const NotFound = () => {
   return (

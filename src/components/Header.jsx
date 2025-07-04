@@ -1,21 +1,75 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { LuMoveRight, LuAlignLeft, LuX } from "react-icons/lu";
-import logo from "../../public/logo.png";
-//todo: add sticky to the header
+import { LuMoveRight, LuAlignLeft, LuX, LuCookie } from "react-icons/lu";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ContactModal from "./UI/ContactModal";
+import logo from "/public/logo.png";
+
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showCookieConsent, setShowCookieConsent] = useState(false);
+
   const handleMenuToggle = () => setIsMenuOpen(!isMenuOpen);
   const handleCloseMenu = () => setIsMenuOpen(false);
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
+  // Check if user has already accepted cookies
+  useEffect(() => {
+    const hasAcceptedCookies = localStorage.getItem("cookiesAccepted");
+    if (!hasAcceptedCookies) {
+      // Show cookie consent after a short delay
+      const timer = setTimeout(() => {
+        setShowCookieConsent(true);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const acceptCookies = () => {
+    localStorage.setItem("cookiesAccepted", "true");
+    setShowCookieConsent(false);
+  };
+
+  const declineCookies = () => {
+    // Still close the banner but don't set the localStorage item
+    setShowCookieConsent(false);
+  };
 
   return (
     <header className="w-full sticky top-0 z-30 transition-shadow">
       <div>
-        <section className="h-8 flex items-center justify-center gap-2 border border-stone-300 bg-gradient-to-r from-green-50 to-green-100 font-medium text-green-900">
-          Admission is on now, grab your seat now{" "}
-          <span>
-            <LuMoveRight />
-          </span>
+        <section className="h-8 border border-stone-300 bg-gradient-to-r from-green-50 to-green-100 font-medium text-green-900 marquee-container">
+          <div className="marquee-content marquee-content-1">
+            <span className="mx-4 flex items-center gap-2">
+              Admission is on now, grab your seat now <LuMoveRight />
+            </span>
+            <span className="mx-4 flex items-center gap-2">
+              New courses available for 2024/2025 session <LuMoveRight />
+            </span>
+            <span className="mx-4 flex items-center gap-2">
+              Visit our campus for a tour <LuMoveRight />
+            </span>
+            <span className="mx-4 flex items-center gap-2">
+              Scholarships available for qualified students <LuMoveRight />
+            </span>
+          </div>
+          <div className="marquee-content marquee-content-2">
+            <span className="mx-4 flex items-center gap-2">
+              Admission is on now, grab your seat now <LuMoveRight />
+            </span>
+            <span className="mx-4 flex items-center gap-2">
+              New courses available for 2024/2025 session <LuMoveRight />
+            </span>
+            <span className="mx-4 flex items-center gap-2">
+              Visit our campus for a tour <LuMoveRight />
+            </span>
+            <span className="mx-4 flex items-center gap-2">
+              Scholarships available for qualified students <LuMoveRight />
+            </span>
+          </div>
         </section>
         <div className="w-full h-14  bg-white border border-stone-300 px-5 py-1.5 flex items-center justify-between backdrop-blur-md">
           <Link
@@ -39,7 +93,10 @@ const Header = () => {
             </ul>
           </nav>
           <div className="lg:flex hidden">
-            <button className="border border-green-300 px-4 py-1 rounded-lg font-semibold bg-green-50 hover:bg-green-100 transition">
+            <button
+              className="border border-green-300 px-4 py-1 rounded-lg font-semibold bg-green-50 hover:bg-green-100 transition"
+              onClick={handleOpenModal}
+            >
               Get in touch
             </button>
           </div>
@@ -118,13 +175,68 @@ const Header = () => {
           <div className="mt-8">
             <button
               className="w-full border border-green-300 px-4 py-2 rounded-lg font-semibold bg-green-50 hover:bg-green-100 transition"
-              onClick={handleCloseMenu}
+              onClick={() => {
+                handleCloseMenu();
+                handleOpenModal();
+              }}
             >
               Get in touch
             </button>
           </div>
         </nav>
       </div>
+
+      {/* Cookie Consent Modal */}
+      {showCookieConsent && (
+        <div className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-green-200 p-4 z-50 slide-up">
+          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="text-3xl text-green-600">
+                <LuCookie />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-800">We use cookies</h3>
+                <p className="text-sm text-gray-600 max-w-xl">
+                  This website uses cookies to enhance your browsing experience
+                  and provide personalized services. By continuing to use our
+                  website, you agree to our use of cookies.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <button
+                onClick={declineCookies}
+                className="px-4 py-2 text-sm border border-gray-300 rounded-md hover:bg-gray-100 transition"
+              >
+                Decline
+              </button>
+              <button
+                onClick={acceptCookies}
+                className="px-4 py-2 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 transition"
+              >
+                Accept All Cookies
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Contact Modal */}
+      <ContactModal isOpen={isModalOpen} onClose={handleCloseModal} />
+
+      {/* Toast Container */}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </header>
   );
 };

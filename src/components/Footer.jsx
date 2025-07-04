@@ -1,14 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { LuMail, LuPhone, LuMapPin } from "react-icons/lu";
+import { LuMail, LuPhone, LuMapPin, LuSend } from "react-icons/lu";
 import {
   FaFacebookF,
   FaInstagram,
   FaXTwitter,
   FaLinkedinIn,
 } from "react-icons/fa6";
-import logo from "../../public/logo.png"; // Adjust path as necessary
+import logo from "/public/logo.png"; // Using absolute path to public directory
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [subscribeSuccess, setSubscribeSuccess] = useState(false);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubscribeSuccess(true);
+      setEmail("");
+
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubscribeSuccess(false);
+      }, 5000);
+    }, 1500);
+  };
+
   return (
     <footer className="px-0 py-0 bg-gradient-to-tr from-green-50 via-white to-green-100 border-t border-stone-200">
       {/* /* Newsletter/Contact CTA */}
@@ -22,18 +45,32 @@ const Footer = () => {
             inbox.
           </p>
         </div>
-        <form className="flex gap-2 w-full md:w-auto">
+        <form
+          className="flex gap-2 w-full md:w-auto"
+          onSubmit={handleSubscribe}
+        >
           <input
             type="email"
             placeholder="Enter your email"
             className="px-4 py-2 rounded-full border border-white text-white w-full md:w-64 focus:outline-none bg-green-500 placeholder-white"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <button
             type="submit"
-            className="px-6 py-2 rounded-full bg-white text-green-700 font-semibold shadow hover:bg-green-100 transition"
+            className="px-6 py-2 rounded-full bg-white text-green-700 font-semibold shadow hover:bg-green-100 transition flex items-center gap-2"
+            disabled={isSubmitting}
           >
-            Subscribe
+            {isSubmitting ? (
+              "Subscribing..."
+            ) : subscribeSuccess ? (
+              "Subscribed!"
+            ) : (
+              <>
+                <LuSend className="text-sm" /> Subscribe
+              </>
+            )}
           </button>
         </form>
       </section>
@@ -55,11 +92,21 @@ const Footer = () => {
             <div className="flex flex-col gap-2 text-gray-700 text-sm">
               <div className="flex items-center gap-2">
                 <LuMail className="text-xl text-green-700" />
-                <span>vesa@gmail.com</span>
+                <a
+                  href="mailto:vesa@gmail.com"
+                  className="hover:text-green-700 transition"
+                >
+                  vesa@gmail.com
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <LuPhone className="text-xl text-green-700" />
-                <span>9045678223</span>
+                <a
+                  href="tel:9045678223"
+                  className="hover:text-green-700 transition"
+                >
+                  9045678223
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <LuMapPin className="text-xl text-green-700" />
@@ -207,19 +254,19 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between border-t border-b border-stone-200 py-4 gap-4">
           <div className="flex items-center divide-x divide-stone-400 text-sm font-semibold">
             <Link
-              to={"/privacy-policy"}
+              to={"/terms-of-service"}
               className="px-3 hover:text-green-700 transition"
             >
               Terms of Service
             </Link>
             <Link
-              to={"/terms-of-service"}
+              to={"/privacy-policy"}
               className="px-3 hover:text-green-700 transition"
             >
               Privacy Policy
             </Link>
             <Link
-              to={"/terms-of-service"}
+              to={"/cookie-policy"}
               className="px-3 hover:text-green-700 transition"
             >
               Cookie Policy

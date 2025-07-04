@@ -1,18 +1,27 @@
 // VTE Faculty Notice Board Updated UI
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import bannerImg from "../assets/images/hero-bg.jpg";
 import { departments, downloads, allNotices, pinnedNotices } from "../api/data";
 import Pagination from "../components/Pagination";
 import Filter from "../components/Filter";
-import { LuMegaphone, LuPin, LuBuilding2, LuDownload } from "react-icons/lu";
+import {
+  LuMegaphone,
+  LuPin,
+  LuBuilding2,
+  LuDownload,
+  LuCalendarDays,
+  LuArrowRight,
+} from "react-icons/lu";
 import DeansSection from "../components/DeansSection";
 import Callout from "../components/Callout";
 import Events from "../components/Events";
+import HelmetSEO from "../components/HelmetSEO.jsx";
 
 // Example departments for filter (ensure your department names match those in your notices)
 const departmentOptions = ["All", ...departments.map((d) => d.name)];
 
-const NOTICES_PER_PAGE = 4;
+const NOTICES_PER_PAGE = 6; // Increased from 4 to show more notices
 const DOWNLOADS_PER_PAGE = 4;
 
 const Notice = () => {
@@ -44,10 +53,11 @@ const Notice = () => {
   }, [selectedDept]);
 
   return (
-    <main className="space-y-12">
-      {/* Hero Section */}
+    <main className="space-y-12 bg-gradient-to-br from-green-50 via-white to-green-100 pb-12">
+      <HelmetSEO page="notices" />
+      {/* Hero Section - Simplified */}
       <section
-        className="relative text-white h-[400px] flex items-center justify-center"
+        className="relative text-white h-[300px] flex items-center justify-center"
         style={{
           backgroundImage: `url(${bannerImg})`,
           backgroundSize: "cover",
@@ -56,26 +66,23 @@ const Notice = () => {
       >
         <div className="absolute inset-0 bg-black/60 z-0" />
         <div className="relative z-10 text-center">
-          <h1 className="text-4xl font-bold">Learn. Connect. Grow.</h1>
-          <p className="mt-2">Faculty of VTE | Powered by Cresa Tech Society</p>
-          <button className="mt-4 bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded shadow">
-            Explore Resources
-          </button>
+          <h1 className="text-4xl font-bold mb-2">Faculty Notice Board</h1>
+          <p className="mt-2">
+            Stay informed with the latest updates and announcements
+          </p>
         </div>
       </section>
 
-      {/* Pinned Notice Banner */}
+      {/* Pinned Notice Banner - Enhanced */}
       <section className="px-4">
-        <div className="relative h-[300px] bg-gradient-to-r from-green-100 via-green-50 to-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row items-stretch border border-green-200">
-          <div className="absolute left-6 top-6 text-green-600 text-3xl z-20 animate-bounce">
-            {/* Use the icon from data */}
-            {pinnedNotices[0].icon &&
-              React.createElement(pinnedNotices[0].icon)}
+        <div className="relative h-auto md:h-[300px] bg-gradient-to-r from-green-100 via-green-50 to-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row items-stretch border border-green-200">
+          <div className="absolute left-6 top-6 text-green-600 text-3xl z-20">
+            <LuPin className="animate-bounce" />
           </div>
           <img
             src={pinnedNotices[0].image}
             alt="Pinned"
-            className="w-full md:w-1/2 h-full object-cover rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none"
+            className="w-full md:w-1/2 h-[200px] md:h-full object-cover rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none"
           />
           <div className="p-8 flex-1 flex flex-col justify-center relative z-10">
             <div className="flex items-center gap-2 mb-2">
@@ -95,17 +102,20 @@ const Notice = () => {
                 {pinnedNotices[0].date}
               </span>
             </div>
-            <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full font-semibold shadow transition">
-              {pinnedNotices[0].button}
-            </button>
+            <Link
+              to={`/notice/${pinnedNotices[0].id}`}
+              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full font-semibold shadow transition flex items-center justify-center gap-2 w-fit"
+            >
+              View Details <LuArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Notice Feed */}
+      {/* Notice Feed - Improved */}
       <section className="px-4">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4">
-          <h2 className="text-xl font-bold">Notice Feeds</h2>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
+          <h2 className="text-2xl font-bold text-green-800">Notice Feeds</h2>
           <Filter
             categories={departmentOptions}
             selected={selectedDept}
@@ -113,41 +123,56 @@ const Notice = () => {
           />
         </div>
         {filteredNotices.length === 0 ? (
-          <div className="text-center text-gray-500 py-12">
-            No notices found for this department.
+          <div className="text-center text-gray-500 py-12 bg-white rounded-xl shadow">
+            <LuMegaphone className="mx-auto text-4xl text-gray-300 mb-2" />
+            <p className="text-lg">No notices found for this department.</p>
+            <button
+              onClick={() => setSelectedDept("All")}
+              className="mt-4 text-green-600 hover:text-green-800"
+            >
+              View all notices
+            </button>
           </div>
         ) : (
           <>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {paginated.map((n) => (
-                <div
+                <Link
+                  to={`/notice/${n.id}`}
                   key={n.id + n.title}
-                  className="bg-white border border-green-100 rounded-xl shadow hover:ring-2 hover:ring-green-400 transition p-6 flex flex-col justify-between"
+                  className="bg-white border border-green-100 rounded-xl shadow hover:shadow-md hover:border-green-300 transition p-6 flex flex-col justify-between h-full"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="font-semibold text-lg text-green-900">
                         {n.title}
                       </h3>
-                      <span className="text-xs text-gray-500">{n.date}</span>
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center gap-2 mb-3 text-xs text-green-700">
+                      <LuCalendarDays className="text-green-600" />
+                      <span>{n.date}</span>
+                      <span className="mx-1">•</span>
                       <LuBuilding2 className="text-green-600" />
-                      <span className="text-xs text-green-700 font-medium">
-                        {n.department || "All Departments"}
-                      </span>
+                      <span>{n.department || "All Departments"}</span>
                     </div>
-                    <p className="text-sm text-gray-700">{n.summary}</p>
+                    <p className="text-sm text-gray-700 line-clamp-3">
+                      {n.summary || n.content.substring(0, 120) + "..."}
+                    </p>
                   </div>
-                </div>
+                  <div className="mt-4 text-green-600 hover:text-green-800 text-sm font-medium flex items-center">
+                    Read more <LuArrowRight className="ml-1" size={14} />
+                  </div>
+                </Link>
               ))}
             </div>
-            <Pagination
-              currentPage={page}
-              totalPosts={filteredNotices.length}
-              postsPerPage={NOTICES_PER_PAGE}
-              onPageChange={setPage}
-            />
+            <div className="mt-8">
+              <Pagination
+                currentPage={page}
+                totalPosts={filteredNotices.length}
+                postsPerPage={NOTICES_PER_PAGE}
+                onPageChange={setPage}
+              />
+            </div>
           </>
         )}
       </section>
@@ -158,9 +183,11 @@ const Notice = () => {
       {/* Special Highlight */}
       <Callout />
 
-      {/* Downloads */}
-      <section className="px-4">
-        <h2 className="text-xl font-bold mb-3">Downloads & Resources</h2>
+      {/* Downloads - Improved */}
+      <section className="px-4 pt-4">
+        <h2 className="text-2xl font-bold mb-6 text-green-800">
+          Downloads & Resources
+        </h2>
         <div className="grid md:grid-cols-2 gap-6">
           {paginatedDownloads.map((d) => (
             <div
@@ -185,12 +212,14 @@ const Notice = () => {
             </div>
           ))}
         </div>
-        <Pagination
-          currentPage={downloadsPage}
-          totalPosts={downloads.length}
-          postsPerPage={DOWNLOADS_PER_PAGE}
-          onPageChange={setDownloadsPage}
-        />
+        <div className="mt-6">
+          <Pagination
+            currentPage={downloadsPage}
+            totalPosts={downloads.length}
+            postsPerPage={DOWNLOADS_PER_PAGE}
+            onPageChange={setDownloadsPage}
+          />
+        </div>
       </section>
 
       {/* Events */}

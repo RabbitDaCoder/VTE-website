@@ -1,82 +1,87 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App.jsx";
-import Home from "../pages/Home.jsx";
-import About from "../pages/About.jsx";
-import Contact from "../pages/Contact.jsx";
-import Blog from "../pages/Blog.jsx";
-import Notice from "../pages/Notice.jsx";
-import Events from "../pages/Events.jsx";
-import Departments from "../pages/Departments.jsx";
-import NotFound from "../components/NotFound.jsx";
-import DepartmentsDetails from "../components/UI/DepartmentsDetails.jsx";
-import NoticeDetails from "../components/UI/NoticeDetails.jsx";
-import BlogDetails from "../components/UI/BlogDetails.jsx";
-import Academia from "../pages/Academia.jsx";
-import EventsDetails from "../components/UI/EventsDetails.jsx";
+import App from "../App";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import Blog from "../pages/Blog";
+import Departments from "../pages/Departments";
+import Events from "../pages/Events";
+import Notice from "../pages/Notice";
+import NotFound from "../components/NotFound";
+import BlogDetails from "../components/UI/BlogDetails";
+import DepartmentsDetails from "../components/UI/DepartmentsDetails";
+import NoticeDetails from "../components/UI/NoticeDetails";
+import EventDetails from "../components/UI/EventDetails";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import TermsOfService from "../pages/TermsOfService";
+import CookiePolicy from "../pages/CookiePolicy";
 
-const router = createBrowserRouter([
+const routes = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <NotFound />,
     children: [
       {
-        index: true,
+        path: "/",
         element: <Home />,
       },
       {
-        path: "about",
+        path: "/about",
         element: <About />,
       },
       {
-        path: "contact",
+        path: "/contact",
         element: <Contact />,
       },
       {
-        path: "blog",
+        path: "/blog",
         element: <Blog />,
       },
       {
-        path: "notice",
-        element: <Notice />,
-      },
-      {
-        path: "events",
-        element: <Events />,
-      },
-      {
-        path: "departments",
-        element: <Departments />,
-      },
-      {
-        path: "departments/:id",
-        element: <DepartmentsDetails />,
-      },
-      {
-        path: "notice/:id",
-        element: <NoticeDetails />,
-      },
-      {
-        path: "blog/:id",
+        path: "/blog/:id",
         element: <BlogDetails />,
       },
       {
-        path: "events/:id",
-        element: <EventsDetails />,
+        path: "/departments",
+        element: <Departments />,
       },
       {
-        path: "*",
-        element: <NotFound />,
+        path: "/departments/:id",
+        element: <DepartmentsDetails />,
+      },
+      {
+        path: "/events",
+        element: <Events />,
+      },
+      {
+        path: "/events/:id",
+        element: <EventDetails />,
+      },
+      {
+        path: "/notice",
+        element: <Notice />,
+      },
+      {
+        path: "/notice/:id",
+        element: <NoticeDetails />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: "/terms-of-service",
+        element: <TermsOfService />,
+      },
+      {
+        path: "/cookie-policy",
+        element: <CookiePolicy />,
       },
     ],
   },
 ]);
 
-export default router;
+export default routes; // Add this line to export routes as default
 
-// The createBrowserRouter function is used to create a router object that defines the routes for the application.
-// The router object is then used in the main.tsx file to render the application with the defined routes.
-// The routes include a root path that renders the App component, an index route that renders the
-// Home component, and a nested route for the About page. An error element is also defined to handle any errors that may occur during routing.
-// The App component serves as the main layout, including a header, footer, and a link to the About page.
 // The Home and About components are simple functional components that return a div with their respective content.

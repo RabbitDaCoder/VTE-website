@@ -1,1 +1,73 @@
 @import "tailwindcss";
+
+/* Font styling */
+:root {
+  --font-heading: "Source Serif 4", serif;
+  --font-body: "Work Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+/* Custom marquee animation */
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  height: 2rem;
+}
+
+.marquee-content {
+  display: flex;
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee-content-1 {
+  animation: marqueeAnimation 25s linear infinite;
+}
+
+.marquee-content-2 {
+  animation: marqueeAnimation2 25s linear infinite;
+}
+
+@keyframes marqueeAnimation {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marqueeAnimation2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+.slide-up {
+  animation: slideUpAnimation 0.5s ease-out forwards;
+}
+
+@keyframes slideUpAnimation {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

@@ -1,5 +1,10 @@
+let nextId = 1;
+
 export const generateID = () => {
-  const randomDigits = () =>
-    Math.floor(100000000000000 + Math.random() * 900000000000000).toString();
-  return `B${randomDigits()}`;
+  return nextId++;
+};
+
+// Reset counter function (useful for testing or when needed)
+export const resetIdCounter = (startValue = 1) => {
+  nextId = startValue;
 };

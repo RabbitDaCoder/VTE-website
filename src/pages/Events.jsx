@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { events, departments } from "../api/data"; // Use departments for categories
 import Filter from "../components/Filter";
 import Pagination from "../components/Pagination";
 import { motion } from "framer-motion";
 import useDateFormatter from "../hooks/useDateFormatter";
-import { LuMapPin, LuClock2 } from "react-icons/lu";
+import { LuMapPin, LuClock2, LuSearch, LuCalendarDays } from "react-icons/lu";
 import heroImage from "/images/matric.JPG";
 import { Link } from "react-router-dom";
 import Callout from "../components/Callout";
+import HelmetSEO from "../components/HelmetSEO";
 
 // Build department categories from departments data
 const departmentCategory = ["All", ...departments.map((dept) => dept.name)];
@@ -56,15 +57,15 @@ const EventCard = ({ event }) => {
           <img
             src={event.image}
             alt={event.title}
-            className="w-full h-48 object-cover rounded-md "
+            className="w-full h-48 object-cover rounded-md"
           />
           {/* Calendar-style Date Badge */}
-          <div className="absolute top-3 left-3 bg-white rounded-md px-2  text-center shadow-md text-red-600 leading-tight w-12">
+          <div className="absolute top-3 left-3 bg-white rounded-md px-2 text-center shadow-md text-red-600 leading-tight w-12">
             <div className="text-lg font-bold">{day}</div>
             <div className="text-[10px] uppercase">{month}</div>
           </div>
         </div>
-        <div className="px-4 flex flex-col ">
+        <div className="px-4 flex flex-col">
           <span className="text-xs capitalize text-green-800 font-semibold">
             {event.department}
           </span>
@@ -76,17 +77,19 @@ const EventCard = ({ event }) => {
               </span>
             )}
           </h3>
-          <p className="text-gray-700 text-sm mt-1">{event.description}</p>
-          <div className="text-gray-500 flex gap-0.5 items-center text-xs mt-2">
-            <LuClock2 /> <span className="italic">{time}</span>
+          <p className="text-gray-700 text-sm mt-1 line-clamp-2">
+            {event.description}
+          </p>
+          <div className="flex items-center gap-2 mt-2 text-sm text-gray-600">
+            <div className="flex items-center gap-0.5">
+              <LuClock2 size={14} /> <span className="italic">{time}</span>
+            </div>
+            <div className="flex items-center gap-0.5">
+              <LuMapPin size={14} /> <span>{event.location}</span>
+            </div>
           </div>
-          <div className="flex items-center gap-2  text-sm text-blue-600 font-medium">
-            <LuMapPin size={15} />
-            <span>{event.location}</span>
-          </div>
-
-          <div className="inline-block underline text-green-900 text-sm  py-1 rounded-full font-semibold ">
-            See more
+          <div className="inline-block text-green-700 text-sm mt-2 font-medium hover:text-green-800">
+            See more details →
           </div>
         </div>
       </motion.div>
@@ -97,12 +100,20 @@ const EventCard = ({ event }) => {
 const Events = () => {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // Filtering
-  const filtered =
-    selectedDepartment === "All"
-      ? events
-      : events.filter((e) => e.department === selectedDepartment);
+  // Filtering by department and search term
+  const filtered = events.filter((event) => {
+    const matchesDepartment =
+      selectedDepartment === "All" || event.department === selectedDepartment;
+    const matchesSearch =
+      searchTerm === "" ||
+      event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      event.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      event.location.toLowerCase().includes(searchTerm.toLowerCase());
+
+    return matchesDepartment && matchesSearch;
+  });
 
   // Pagination
   const eventsPerPage = 6;
@@ -111,36 +122,97 @@ const Events = () => {
     currentPage * eventsPerPage
   );
 
-  // Reset to page 1 if filter changes
-  React.useEffect(() => {
+  // Reset to page 1 if filter or search changes
+  useEffect(() => {
     setCurrentPage(1);
-  }, [selectedDepartment]);
+  }, [selectedDepartment, searchTerm]);
+
+  // Handle search input
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  // Clear search
+  const clearSearch = () => {
+    setSearchTerm("");
+  };
 
   return (
     <div className="bg-green-50 min-h-screen pb-10">
+      <HelmetSEO page="events" />
       <HeroSection />
-      <div className="flex justify-start px-14 mt-8">
+
+      {/* Search and Filter Section */}
+      <div className="max-w-7xl mx-auto px-4 mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <Filter
           categories={departmentCategory}
           selected={selectedDepartment}
           onSelect={setSelectedDepartment}
         />
+
+        <div className="relative max-w-md w-full">
+          <input
+            type="text"
+            placeholder="Search events..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="w-full px-4 py-2 rounded-lg border border-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          />
+          {searchTerm ? (
+            <button
+              onClick={clearSearch}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            >
+              ×
+            </button>
+          ) : (
+            <LuSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" />
+          )}
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 md:px-16">
-        {paginated.map((event, idx) => (
-          <EventCard key={idx} event={event} />
-        ))}
+      {/* Events Grid */}
+      <div className="max-w-7xl mx-auto px-4 mt-8">
+        {filtered.length === 0 ? (
+          <div className="bg-white rounded-xl p-8 text-center shadow">
+            <h3 className="text-xl font-bold text-gray-800 mb-2">
+              No events found
+            </h3>
+            <p className="text-gray-600 mb-4">
+              We couldn't find any events matching your search criteria.
+            </p>
+            <button
+              onClick={() => {
+                setSearchTerm("");
+                setSelectedDepartment("All");
+              }}
+              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+            >
+              Clear Filters
+            </button>
+          </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {paginated.map((event, idx) => (
+                <EventCard key={idx} event={event} />
+              ))}
+            </div>
+
+            <Pagination
+              currentPage={currentPage}
+              totalPosts={filtered.length}
+              postsPerPage={eventsPerPage}
+              onPageChange={setCurrentPage}
+            />
+          </>
+        )}
       </div>
 
-      <Pagination
-        currentPage={currentPage}
-        totalPosts={filtered.length}
-        postsPerPage={eventsPerPage}
-        onPageChange={setCurrentPage}
-      />
-
-      <Callout />
+      {/* Callout Section */}
+      <div className="max-w-7xl mx-auto px-4 mt-16">
+        <Callout />
+      </div>
     </div>
   );
 };
