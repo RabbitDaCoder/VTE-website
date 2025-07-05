@@ -174,7 +174,7 @@ const Home = () => {
       >
         <motion.div className="flex flex-col items-center" variants={fadeInUp}>
           <motion.div
-            className="capitalize border rounded-sm border-green-400 w-[210px] text-sm font-medium text-green-600 mb-2"
+            className="capitalize w-[210px] text-sm font-medium text-green-600 mb-2"
             initial={{ width: 0 }}
             animate={benefitsInView ? { width: 210 } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
