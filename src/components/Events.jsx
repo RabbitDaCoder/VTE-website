@@ -24,9 +24,9 @@ const Events = () => {
 
   useEffect(() => {
     // Get upcoming events sorted by date (earlier first)
-    const events = getUpcomingEvents(6); // Get more events to have enough for "load more"
-    console.log("Setting upcoming events:", events);
-    setUpcomingEvents(events);
+    const fetchedEvents = getUpcomingEvents(6); // Get more events to have enough for "load more"
+    console.log("Fetched upcoming events:", fetchedEvents);
+    setUpcomingEvents(fetchedEvents);
   }, []);
 
   const displayedEvents = upcomingEvents.slice(0, visibleEvents);
@@ -129,7 +129,7 @@ const Events = () => {
                       <div className="px-4 pb-3">
                         <div className="flex justify-between items-center">
                           <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
-                            {event.department}
+                            {new Date(event.date).toLocaleDateString()}
                           </span>
                           <motion.span
                             className="text-green-700 flex items-center gap-1 group-hover:text-green-900"

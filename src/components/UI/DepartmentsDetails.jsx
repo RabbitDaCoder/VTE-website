@@ -48,7 +48,7 @@ const DepartmentDetail = () => {
       <HelmetSEO page="departmentDetail" department={dept} />
 
       {/* Hero Section with Department Logo and Gallery Image */}
-      <div className="relative h-[400px] bg-green-900">
+      <div className="relative h-[550px] lg:h-[400px] bg-green-900">
         {/* Background Image from Gallery */}
         <div className="absolute inset-0 z-0">
           <img
@@ -60,7 +60,7 @@ const DepartmentDetail = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4 py-48">
           <div className="bg-white/10 backdrop-blur-sm p-6 rounded-full mb-4 border border-white/20">
             {dept.logo ? (
               <img

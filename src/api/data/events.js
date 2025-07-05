@@ -140,25 +140,21 @@ export const getEventById = (id) => {
 export const getUpcomingEvents = (limit = 3) => {
   const currentDate = new Date();
 
-  // For debugging
-  console.log("Current date:", currentDate);
-
+  // Filter events that are in the future and sort by date (earlier first)
   const upcomingEventsArray = events
     .filter((event) => {
       const eventDate = new Date(event.date);
-      // For debugging
-      console.log(
-        `Event: ${event.title}, Date: ${eventDate}, Is upcoming: ${
-          eventDate > currentDate
-        }`
-      );
       return eventDate > currentDate;
     })
     .sort((a, b) => new Date(a.date) - new Date(b.date)) // Sort by date (earlier first)
     .slice(0, limit);
 
-  // For debugging
-  console.log("Upcoming events count:", upcomingEventsArray.length);
+  // If no upcoming events, return the next 3 events regardless of date
+  if (upcomingEventsArray.length === 0) {
+    return events
+      .sort((a, b) => new Date(a.date) - new Date(b.date))
+      .slice(0, limit);
+  }
 
   return upcomingEventsArray;
 };
