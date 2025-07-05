@@ -1,5 +1,5 @@
 import React from "react";
-import calloutImage from "/images/VTE-2025.webp";
+import calloutImage from "/images/hero/hero-bg.jpg";
 const Callout = () => (
   <div className="relative h-96 md:h-[420px] mt-20 flex items-center justify-center overflow-hidden shadow-2xl border border-green-200">
     <img

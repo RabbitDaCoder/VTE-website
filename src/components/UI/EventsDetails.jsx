@@ -56,6 +56,7 @@ const EventsDetails = () => {
   // Get related events (excluding current one, preferably from same department)
   const relatedEvents = events
     .filter((e) => e.id !== event.id && e.department === event.department)
+    .sort((a, b) => new Date(a.date) - new Date(b.date)) // Sort by date (earlier first)
     .slice(0, 3);
 
   // Share functionality

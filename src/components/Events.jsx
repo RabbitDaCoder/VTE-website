@@ -7,7 +7,7 @@ import {
   itemFadeIn,
   scaleIn,
 } from "../utils/AnimationVariants.js";
-import { events } from "../api/data";
+import { getUpcomingEvents } from "../api/data";
 import {
   LuArrowRight,
   LuCalendarDays,
@@ -23,7 +23,9 @@ const Events = () => {
   const eventsInView = useInView(eventsRef, { once: true, threshold: 0.1 });
 
   useEffect(() => {
-    console.log("Setting test events:", events);
+    // Get upcoming events sorted by date (earlier first)
+    const events = getUpcomingEvents(6); // Get more events to have enough for "load more"
+    console.log("Setting upcoming events:", events);
     setUpcomingEvents(events);
   }, []);
 

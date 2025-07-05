@@ -103,17 +103,19 @@ const Events = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   // Filtering by department and search term
-  const filtered = events.filter((event) => {
-    const matchesDepartment =
-      selectedDepartment === "All" || event.department === selectedDepartment;
-    const matchesSearch =
-      searchTerm === "" ||
-      event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      event.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      event.location.toLowerCase().includes(searchTerm.toLowerCase());
+  const filtered = events
+    .filter((event) => {
+      const matchesDepartment =
+        selectedDepartment === "All" || event.department === selectedDepartment;
+      const matchesSearch =
+        searchTerm === "" ||
+        event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        event.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        event.location.toLowerCase().includes(searchTerm.toLowerCase());
 
-    return matchesDepartment && matchesSearch;
-  });
+      return matchesDepartment && matchesSearch;
+    })
+    .sort((a, b) => new Date(a.date) - new Date(b.date)); // Sort by date (earlier first)
 
   // Pagination
   const eventsPerPage = 6;

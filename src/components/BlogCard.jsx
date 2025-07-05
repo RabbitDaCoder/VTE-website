@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { LuCalendar, LuUser, LuClock, LuArrowRight } from "react-icons/lu";
+import { FaUserCircle } from "react-icons/fa";
 
 const BlogCard = ({ blog }) => {
-  // Calculate reading time
-  const readingTime = Math.max(
-    1,
-    Math.ceil(blog.content.split(/\s+/).length / 200)
-  );
+  // Use readTime from blog data if available, otherwise calculate it
+  const readingTime =
+    blog.readTime ||
+    Math.max(1, Math.ceil(blog.content.split(/\s+/).length / 200));
 
   // Format date
   const formattedDate = new Date(blog.date).toLocaleDateString("en-US", {
@@ -41,7 +41,10 @@ const BlogCard = ({ blog }) => {
             <LuUser size={12} /> {blog.author || "VTE Admin"}
           </span>
           <span className="flex items-center gap-1">
-            <LuClock size={12} /> {readingTime} min
+            <LuClock size={12} />{" "}
+            {typeof readingTime === "string"
+              ? readingTime
+              : `${readingTime} min`}
           </span>
         </div>
 
@@ -65,7 +68,7 @@ const BlogCard = ({ blog }) => {
         <p className="text-gray-600 mb-4 line-clamp-3">{blog.content}</p>
 
         <Link
-          to={`/blog/${blog.id}`}
+          to={`/blog/${blog.slug}`}
           className="mt-auto inline-flex items-center text-green-700 font-semibold hover:text-green-600 transition-colors group"
         >
           Read Article

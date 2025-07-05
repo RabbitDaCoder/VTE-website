@@ -1,14 +1,45 @@
 import eventsImg from "../../../public/images/events/eventsImg-1.jpg";
+import tenYearCelebration from "/images/ten-years-aniversery.jpg";
 
 // Events data with sequential IDs
 export const events = [
+  {
+    id: 8,
+    title: "HOD Football League",
+    description:
+      "Departmental football competition featuring HODs and faculty members",
+    date: "2024-07-29T15:00:00",
+    department: "All Departments",
+    image:
+      "https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vdGJhbGwlMjB0b3VybmFtZW50fGVufDB8fDB8fHww",
+    location: "Faculty Sports Complex",
+    upcoming: new Date("2024-07-29T15:00:00") > new Date(),
+    content:
+      "The HOD Football League is an exciting interdepartmental competition bringing together Heads of Departments and faculty members in a friendly but competitive football tournament. Running from July 29th to August 20th, 2024, this event aims to foster camaraderie, promote physical fitness, and strengthen relationships across departments.\n\nThe tournament will feature teams representing each department within the Faculty of Vocational and Technical Education. Matches will be held twice weekly, with the final championship match scheduled for August 20th.\n\nStudents are encouraged to attend and support their departments. Refreshments will be available, and special entertainment is planned for the final match day.\n\nSchedule:\n• Opening Ceremony & First Matches: July 29th, 3:00 PM\n• Semi-Finals: August 15th, 3:00 PM\n• Finals & Closing Ceremony: August 20th, 3:00 PM\n\nCome witness your favorite lecturers showcase their football skills!",
+    author: "Edeh Chinedu Daniel",
+  },
+  {
+    id: 9,
+    title: "VTE Faculty 10th Anniversary Celebration",
+    description:
+      "Special Tech Service Session by Computer and Robotics Education Department",
+    date: "2024-07-08T09:00:00",
+    department: "Computer and Robotics Education",
+    image: tenYearCelebration,
+    location: "VTE Faculty Complex",
+    upcoming: new Date("2024-07-08T09:00:00") > new Date(),
+    content:
+      "In celebration of the 10th year Anniversary of the Faculty of Vocational and Technical Education (VTE), the Department of Computer and Robotics Education is excited to present a Special Tech Service Session as part of the anniversary activities.\n\nAs highlighted in our program, we will be offering:\n• Software Development Services\n• Free Hardware Maintenance Consultation\n\nThis initiative is aimed at showcasing the practical skills and innovation that define our department. It also serves as our contribution to the anniversary celebration, providing value to both students and staff through technical support and development expertise.\n\nThe event will feature:\n• Technical workshops led by faculty experts\n• Student-led demonstrations of innovative projects\n• One-on-one consultation sessions for hardware issues\n• Software development clinics for those with project ideas\n\nAll members of the university community are invited to participate in this celebration of technology and education. Whether you need technical assistance or simply want to explore the innovations happening in our department, we welcome your presence.\n\nDate: July 8th, 2024\nTime: 9:00 AM - 4:00 PM\nVenue: VTE Faculty Complex\n\nJoin us as we celebrate a decade of excellence in vocational and technical education!",
+    author: "Edeh Chinedu Daniel",
+  },
   {
     id: 1,
     title: "Entrepreneurship Development Workshop",
     description: "Practical skills for business creation and management",
     date: "2024-08-15T10:00:00",
     department: "Vocational and Entrepreneurship Education",
-    image: eventsImg,
+    image:
+      "https://plus.unsplash.com/premium_photo-1705267936187-aceda1a6c1a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RW50cmVwcmVuZXVyc2hpcCUyMERldmVsb3BtZW50JTIwV29ya3Nob3B8ZW58MHx8MHx8fDA%3D",
     location: "Entrepreneurship Center, Main Campus",
     upcoming: new Date("2024-08-15T10:00:00") > new Date(),
     content:
@@ -20,7 +51,8 @@ export const events = [
     description: "Exploring sustainable farming technologies",
     date: "2024-09-05T09:00:00",
     department: "Agriculture and Bioresources Education",
-    image: eventsImg,
+    image:
+      "https://plus.unsplash.com/premium_photo-1663047504135-9fa32a33ad01?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QWdyaWN1bHR1cmFsJTIwSW5ub3ZhdGlvbiUyMFN5bXBvc2l1bXxlbnwwfHwwfHx8MA%3D%3D",
     location: "Agricultural Science Complex",
     upcoming: new Date("2024-09-05T09:00:00") > new Date(),
     content:
@@ -32,7 +64,8 @@ export const events = [
     description: "Transforming education through technology",
     date: "2024-09-25T09:00:00",
     department: "Computer and Robotics Education",
-    image: eventsImg,
+    image:
+      "https://images.unsplash.com/photo-1726831662513-48fb5f72c6f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8RGlnaXRhbCUyMEVkdWNhdGlvbiUyMENvbmZlcmVuY2V8ZW58MHx8MHx8fDA%3D",
     location: "ICT Complex",
     upcoming: new Date("2024-09-25T09:00:00") > new Date(),
     content:
@@ -44,7 +77,8 @@ export const events = [
     description: "Showcasing student projects and innovations",
     date: "2024-10-10T10:00:00",
     department: "Industrial Technical Education",
-    image: eventsImg,
+    image:
+      "https://plus.unsplash.com/premium_photo-1742926579467-2d57159e3bec?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VGVjaG5pY2FsJTIwU2tpbGxzJTIwRXhoaWJpdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
     location: "Technical Education Complex",
     upcoming: new Date("2024-10-10T10:00:00") > new Date(),
     content:
@@ -56,7 +90,8 @@ export const events = [
     description: "Celebrating culinary creativity and innovation",
     date: "2024-10-25T11:00:00",
     department: "Home Economics & Hospitality Management Education",
-    image: eventsImg,
+    image:
+      "https://images.unsplash.com/photo-1606046988058-3e5cb90ffd2c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Q3VsaW5hcnklMjBBcnRzJTIwRmVzdGl2YWx8ZW58MHx8MHx8fDA%3D",
     location: "Hospitality Management Center",
     upcoming: new Date("2024-10-25T11:00:00") > new Date(),
     content:
@@ -68,7 +103,8 @@ export const events = [
     description: "Connecting education with industry needs",
     date: "2024-11-15T10:00:00",
     department: "Industrial Technical Education",
-    image: eventsImg,
+    image:
+      "https://images.unsplash.com/photo-1640621281434-cac7b4ec6f2b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SW5kdXN0cmlhbCUyMFBhcnRuZXJzaGlwJTIwRm9ydW18ZW58MHx8MHx8fDA%3D",
     location: "Faculty Conference Center",
     upcoming: new Date("2024-11-15T10:00:00") > new Date(),
     content:
@@ -86,83 +122,12 @@ export const events = [
     content:
       "Faculty Research Day is an annual event that showcases research projects conducted by faculty members and students across all departments. The event features poster presentations, oral presentations, and demonstrations of research findings. This is an excellent opportunity to learn about the diverse research activities within the faculty and to identify potential collaboration opportunities.",
   },
-  {
-    id: 8,
-    title: "Educational Leadership Symposium",
-    description: "Developing effective educational leaders",
-    date: "2025-01-20T09:00:00",
-    department: "All Departments",
-    image: eventsImg,
-    location: "Faculty Conference Center",
-    upcoming: new Date("2025-01-20T09:00:00") > new Date(),
-    content:
-      "The Educational Leadership Symposium focuses on developing effective leadership skills for educational settings. Topics include strategic planning for educational institutions, managing educational change, building effective teams, and promoting inclusive education. The symposium is designed for current and aspiring educational leaders, including department heads, school administrators, and educational policy makers.",
-  },
-  {
-    id: 9,
-    title: "Student Innovation Challenge",
-    description: "Showcase your creative solutions to real-world problems",
-    date: "2024-12-15T13:00:00", // Future date
-    department: "Computer and Robotics Education",
-    image: eventsImg,
-    location: "Innovation Hub, Main Campus",
-    upcoming: new Date("2024-12-15T13:00:00") > new Date(),
-    content:
-      "The Student Innovation Challenge invites students from all departments to present their innovative solutions to real-world problems. Projects can address educational challenges, community needs, or industry problems. Winners will receive funding to develop their ideas further and mentorship from industry professionals. This is a great opportunity to apply your knowledge, enhance your portfolio, and make a positive impact.",
-  },
-  {
-    id: 10,
-    title: "Career Development Workshop",
-    description: "Prepare for your professional journey after graduation",
-    date: "2024-11-20T10:00:00", // Future date
-    department: "All Departments",
-    image: eventsImg,
-    location: "Faculty Auditorium",
-    upcoming: new Date("2024-11-20T10:00:00") > new Date(),
-    content:
-      "The Career Development Workshop is designed to help students prepare for their professional journey after graduation. The workshop covers resume building, interview skills, professional networking, and job search strategies. Industry professionals and alumni will share their experiences and provide valuable insights. Don't miss this opportunity to enhance your employability and connect with potential employers.",
-  },
-  {
-    id: 11,
-    title: "Educational Technology Showcase",
-    description: "Explore the latest innovations in educational technology",
-    date: "2025-02-10T14:00:00", // Far future date to ensure it's upcoming
-    department: "Computer and Robotics Education",
-    image: eventsImg,
-    location: "Technology Innovation Center",
-    upcoming: true, // Explicitly set to true
-    content:
-      "The Educational Technology Showcase brings together innovators, educators, and students to explore cutting-edge technologies transforming education. Experience hands-on demonstrations of virtual reality learning environments, AI-powered educational tools, and innovative teaching platforms. Connect with technology providers and learn how to integrate these tools into your teaching practice.",
-  },
-  {
-    id: 12,
-    title: "Leadership Development Conference",
-    description: "Building the next generation of educational leaders",
-    date: "2025-03-15T09:30:00", // Far future date to ensure it's upcoming
-    department: "All Departments",
-    image: eventsImg,
-    location: "Faculty Conference Center",
-    upcoming: true, // Explicitly set to true
-    content:
-      "The Leadership Development Conference is designed for aspiring educational leaders, department heads, and administrators. The conference features workshops on strategic planning, team management, conflict resolution, and educational policy implementation. Learn from experienced leaders and develop the skills needed to advance your career in educational leadership.",
-  },
-  {
-    id: 13,
-    title: "Research Methodology Workshop",
-    description: "Essential skills for academic and applied research",
-    date: "2025-01-20T10:00:00", // Far future date to ensure it's upcoming
-    department: "All Departments",
-    image: eventsImg,
-    location: "Research Center, Main Campus",
-    upcoming: true, // Explicitly set to true
-    content:
-      "This comprehensive workshop covers both quantitative and qualitative research methodologies, research design, data collection techniques, analysis methods, and ethical considerations. Designed for graduate students, faculty members, and researchers, this workshop will enhance your research capabilities and help you produce high-quality academic work.",
-  },
 ];
 
 // Function to get events
 export const getEvents = () => {
-  return events;
+  // Return events sorted by date (earlier first)
+  return [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
 };
 
 // Function to get an event by ID
@@ -189,7 +154,7 @@ export const getUpcomingEvents = (limit = 3) => {
       );
       return eventDate > currentDate;
     })
-    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .sort((a, b) => new Date(a.date) - new Date(b.date)) // Sort by date (earlier first)
     .slice(0, limit);
 
   // For debugging

@@ -351,13 +351,9 @@ const Home = () => {
           {blogs.slice(0, 3).map((blog, index) => (
             <motion.div
               key={blog.id}
-              className="bg-green-50 rounded-2xl shadow border border-green-100 flex flex-col overflow-hidden transform transition-transform duration-300 hover:shadow-lg"
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-green-100"
               variants={itemFadeIn}
-              whileHover={{
-                y: -10,
-                scale: 1.02,
-                transition: { duration: 0.3 },
-              }}
+              whileHover={{ y: -10 }}
             >
               <motion.div className="overflow-hidden">
                 <motion.img
@@ -377,7 +373,7 @@ const Home = () => {
                   {blog.content.split("\n")[0]}
                 </p>
                 <Link
-                  to={`/blog/${blog.id}`}
+                  to={`/blog/${blog.slug}`}
                   className="mt-auto text-green-700 font-semibold hover:underline text-left w-fit group flex items-center gap-1"
                 >
                   Read More

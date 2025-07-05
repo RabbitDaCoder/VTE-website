@@ -11,7 +11,7 @@ import NotFound from "../components/NotFound";
 import BlogDetails from "../components/UI/BlogDetails";
 import DepartmentsDetails from "../components/UI/DepartmentsDetails";
 import NoticeDetails from "../components/UI/NoticeDetails";
-import EventDetails from "../components/UI/EventDetails";
+import EventDetails from "../components/UI/EventsDetails";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsOfService from "../pages/TermsOfService";
 import CookiePolicy from "../pages/CookiePolicy";
@@ -39,7 +39,7 @@ const routes = createBrowserRouter([
         element: <Blog />,
       },
       {
-        path: "/blog/:id",
+        path: "/blog/:slug", // Change from :id to :slug
         element: <BlogDetails />,
       },
       {

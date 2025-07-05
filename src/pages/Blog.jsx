@@ -118,7 +118,7 @@ const Blog = () => {
           <h2 className="text-2xl font-bold text-green-800 mb-6">
             Featured Article
           </h2>
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden h-[600px]">
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden h-[400px]">
             <div className="md:flex">
               <div className="md:w-1/2 h-full">
                 <img
@@ -127,7 +127,7 @@ const Blog = () => {
                   className="h-64 md:h-full w-full object-cover"
                 />
               </div>
-              <div className="p-6 md:w-1/2 flex flex-col justify-between">
+              <div className="p-6 md:w-1/2 flex flex-col justify-start">
                 <div>
                   {featuredBlog.tags && featuredBlog.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-3">
@@ -160,7 +160,7 @@ const Blog = () => {
                     </span>
                   </div>
                   <Link
-                    to={`/blog/${featuredBlog.id}`}
+                    to={`/blog/${featuredBlog.slug}`}
                     className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
                   >
                     Read Full Article <LuArrowRight className="ml-2" />

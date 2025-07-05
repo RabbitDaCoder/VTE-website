@@ -37,18 +37,61 @@ const DepartmentDetail = () => {
     .filter((event) => event.department === dept.name)
     .slice(0, 3);
 
+  // Get a random gallery image for the hero background
+  const randomGalleryImage =
+    dept.gallery && dept.gallery.length > 0
+      ? dept.gallery[Math.floor(Math.random() * dept.gallery.length)]
+      : dept.image;
+
   return (
     <>
       <HelmetSEO page="departmentDetail" department={dept} />
-      <div className="max-w-5xl mx-auto py-16 px-4">
-        <Link
-          to="/departments"
-          className="text-green-600 hover:underline mb-4 inline-block"
-        >
-          &larr; Back to Departments
-        </Link>
 
-        {/* 1. Hero section with department image and name */}
+      {/* Hero Section with Department Logo and Gallery Image */}
+      <div className="relative h-[400px] bg-green-900">
+        {/* Background Image from Gallery */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={randomGalleryImage}
+            alt={`${dept.name} Background`}
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-green-900/70 to-green-800/90"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4">
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-full mb-4 border border-white/20">
+            {dept.logo ? (
+              <img
+                src={dept.logo}
+                alt={`${dept.name} Logo`}
+                className="w-32 h-32 object-contain"
+              />
+            ) : (
+              <Icon className="text-6xl text-white" />
+            )}
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-2">
+            {dept.name}
+          </h1>
+          <p className="text-xl text-center max-w-3xl mx-auto text-white/90">
+            {dept.summary}
+          </p>
+
+          <div className="mt-8">
+            <Link
+              to="/departments"
+              className="bg-white/20 hover:bg-white/30 text-white px-6 py-2 rounded-full backdrop-blur-sm transition-all border border-white/20"
+            >
+              &larr; Back to Departments
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto py-16 px-4">
+        {/* 1. Hero section with department image and name - Now moved above */}
         <div className="bg-white rounded-2xl shadow-xl border border-green-100 overflow-hidden mb-10">
           <div className="relative h-64 w-full">
             <img
@@ -128,7 +171,7 @@ const DepartmentDetail = () => {
                       <h4 className="text-md font-medium text-green-600 mb-1">
                         Key Courses:
                       </h4>
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {program.courses.map((course, i) => (
                           <div
                             key={i}
@@ -258,30 +301,32 @@ const DepartmentDetail = () => {
 
           {departmentEvents.length > 0 ? (
             <div className="grid md:grid-cols-3 gap-4">
-              {departmentEvents.map((event) => (
-                <Link
-                  key={event.id}
-                  to={`/events/${event.id}`}
-                  className="bg-green-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
-                >
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-32 object-cover"
-                  />
-                  <div className="p-3">
-                    <h3 className="font-medium text-green-800 mb-1">
-                      {event.title}
-                    </h3>
-                    <p className="text-xs text-gray-600 mb-2">
-                      {new Date(event.date).toLocaleDateString()}
-                    </p>
-                    <p className="text-sm text-gray-700 line-clamp-2">
-                      {event.description}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+              {departmentEvents
+                .sort((a, b) => new Date(a.date) - new Date(b.date)) // Sort by date (earlier first)
+                .map((event) => (
+                  <Link
+                    key={event.id}
+                    to={`/events/${event.id}`}
+                    className="bg-green-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
+                  >
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="w-full h-32 object-cover"
+                    />
+                    <div className="p-3">
+                      <h3 className="font-medium text-green-800 mb-1">
+                        {event.title}
+                      </h3>
+                      <p className="text-xs text-gray-600 mb-2">
+                        {new Date(event.date).toLocaleDateString()}
+                      </p>
+                      <p className="text-sm text-gray-700 line-clamp-2">
+                        {event.description}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
             </div>
           ) : (
             <p className="text-center text-gray-500 py-4">

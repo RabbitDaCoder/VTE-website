@@ -24,7 +24,7 @@ import {
 import HelmetSEO from "../HelmetSEO";
 
 const BlogDetails = () => {
-  const { id } = useParams();
+  const { slug } = useParams(); // Change from id to slug
   const navigate = useNavigate();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -39,16 +39,20 @@ const BlogDetails = () => {
   useEffect(() => {
     setLoading(true);
     try {
-      // Find the blog with the matching ID
-      const blogId = parseInt(id);
-      const foundBlog = blogs.find((b) => b.id === blogId);
+      // Find the blog with the matching slug
+      const foundBlog = blogs.find((b) => b.slug === slug);
 
       if (foundBlog) {
         setBlog(foundBlog);
 
-        // Calculate reading time
-        const words = foundBlog.content.split(/\s+/).length;
-        setReadingTime(Math.max(1, Math.ceil(words / 200)));
+        // Use readTime from blog data if available, otherwise calculate it
+        if (foundBlog.readTime) {
+          setReadingTime(foundBlog.readTime);
+        } else {
+          // Calculate reading time
+          const words = foundBlog.content.split(/\s+/).length;
+          setReadingTime(Math.max(1, Math.ceil(words / 200)) + " min");
+        }
 
         // Format date
         setFormattedDate(
@@ -60,7 +64,7 @@ const BlogDetails = () => {
         );
 
         // Find previous and next blogs
-        const currentIndex = blogs.findIndex((b) => b.id === blogId);
+        const currentIndex = blogs.findIndex((b) => b.slug === slug);
         if (currentIndex > 0) {
           setPrevBlog(blogs[currentIndex - 1]);
         }
@@ -73,7 +77,7 @@ const BlogDetails = () => {
         const related = blogs
           .filter(
             (b) =>
-              b.id !== blogId &&
+              b.slug !== slug &&
               (b.tags?.some((tag) => foundBlog.tags?.includes(tag)) ||
                 b.author === foundBlog.author)
           )
@@ -90,12 +94,12 @@ const BlogDetails = () => {
     } finally {
       setLoading(false);
     }
-  }, [id]);
+  }, [slug]);
 
   // Scroll to top on load
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [slug]);
 
   // Handle copy link
   const handleCopyLink = () => {
@@ -105,11 +109,8 @@ const BlogDetails = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-50 via-white to-green-100 px-4">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-green-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-green-800 font-medium">Loading blog post...</p>
-        </div>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-white to-green-100">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-green-600"></div>
       </div>
     );
   }
@@ -174,7 +175,7 @@ const BlogDetails = () => {
                 {blog.author || "VTE Admin"}
               </span>
               <span className="flex items-center gap-2">
-                <LuClock className="text-white/70" /> {readingTime} min read
+                <LuClock className="text-white/70" /> {readingTime}
               </span>
             </div>
           </div>
@@ -329,16 +330,24 @@ const BlogDetails = () => {
               {/* Author Box */}
               <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-green-100 mb-12">
                 <div className="flex flex-col md:flex-row md:items-center gap-6">
-                  <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                    <FaUserCircle className="w-full h-full" />
+                  <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center text-green-600 overflow-hidden">
+                    {blog.authorImg ? (
+                      <img
+                        src={blog.authorImg}
+                        alt={blog.author}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <FaUserCircle className="w-full h-full" />
+                    )}
                   </div>
                   <div className="flex-1">
                     <h4 className="text-xl font-bold text-green-800 mb-2">
                       {blog.author || "VTE Admin"}
                     </h4>
                     <p className="text-gray-600">
-                      Passionate tech educator and blog writer at VTE. Focused
-                      on emerging technologies and community development.
+                      {blog.authorBio ||
+                        "Passionate tech educator and blog writer at VTE. Focused on emerging technologies and community development."}
                     </p>
                     <div className="flex gap-3 mt-4">
                       <a
@@ -364,7 +373,7 @@ const BlogDetails = () => {
               <div className="flex flex-col sm:flex-row justify-between gap-4 mb-12">
                 {prevBlog ? (
                   <Link
-                    to={`/blog/${prevBlog.id}`}
+                    to={`/blog/${prevBlog.slug}`}
                     className="flex-1 bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition flex items-center gap-3 group"
                   >
                     <div className="p-2 bg-green-50 rounded-full text-green-700 group-hover:bg-green-700 group-hover:text-white transition-colors">
@@ -383,7 +392,7 @@ const BlogDetails = () => {
 
                 {nextBlog && (
                   <Link
-                    to={`/blog/${nextBlog.id}`}
+                    to={`/blog/${nextBlog.slug}`}
                     className="flex-1 bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition flex items-center justify-end text-right gap-3 group"
                   >
                     <div>
@@ -416,7 +425,7 @@ const BlogDetails = () => {
               {relatedBlogs.map((related) => (
                 <Link
                   key={related.id}
-                  to={`/blog/${related.id}`}
+                  to={`/blog/${related.slug}`}
                   className="bg-white border border-green-100 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition group"
                 >
                   <div className="relative h-48 overflow-hidden">
@@ -425,11 +434,6 @@ const BlogDetails = () => {
                       alt={related.title}
                       className="h-full w-full object-cover group-hover:scale-105 transition duration-300"
                     />
-                    {related.tags && related.tags[0] && (
-                      <span className="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">
-                        {related.tags[0]}
-                      </span>
-                    )}
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
@@ -438,11 +442,11 @@ const BlogDetails = () => {
                       <span>•</span>
                       <LuClock size={12} />
                       <span>
-                        {Math.max(
-                          1,
-                          Math.ceil(related.content.split(/\s+/).length / 200)
-                        )}{" "}
-                        min read
+                        {related.readTime ||
+                          Math.max(
+                            1,
+                            Math.ceil(related.content.split(/\s+/).length / 200)
+                          ) + " min"}
                       </span>
                     </div>
                     <h4 className="text-lg font-bold text-green-800 mb-2 group-hover:text-green-600 transition-colors">
@@ -457,14 +461,6 @@ const BlogDetails = () => {
                   </div>
                 </Link>
               ))}
-            </div>
-            <div className="flex justify-center mt-10">
-              <Link
-                to="/blog"
-                className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2"
-              >
-                View All Blogs
-              </Link>
             </div>
           </div>
         </div>

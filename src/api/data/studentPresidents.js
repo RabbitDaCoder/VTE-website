@@ -1,63 +1,61 @@
+import facultyPresident from "/images/executives/faculty_president.png";
+import cre_president from "/images/executives/Cre_President.jpg";
+import AE_president from "/images/executives/AE_president.jpg";
+import presidents from "/images/profiles/profile_placeholder.jpg";
 // Student Presidents data
 export const studentPresidents = {
   facultyPresident: {
-    name: "Chukwuemeka Okafor",
+    name: "Comr. Nathan Okoye",
     department: "Computer and Robotics Education",
     position: "Faculty President",
     year: "Final Year",
-    imageUrl:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80",
+    title: "Faculty Students' President, (VESA)",
+    imageUrl: facultyPresident,
     quote:
       "Empowering students through quality vocational and technical education for a better future.",
   },
   departmentalPresidents: [
     {
-      name: "Ngozi Eze",
+      name: "Comr. Eze Chidera Cynthia",
       department: "Agriculture and Bioresources Education",
       position: "Departmental President",
       year: "400 Level",
-      imageUrl:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80",
+      imageUrl: AE_president,
     },
     {
-      name: "Oluwaseun Adeyemi",
+      name: "Comr. Modestus Chidera",
       department: "Business Education",
       position: "Departmental President",
       year: "400 Level",
-      imageUrl:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80",
+      imageUrl: presidents,
     },
     {
-      name: "Chibuike Eze",
+      name: "Comr. Chibuzo Daniel O.",
       department: "Computer and Robotics Education",
       position: "Departmental President",
       year: "500 Level",
-      imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80",
+      imageUrl: cre_president,
     },
     {
-      name: "Fatima Bello",
+      name: "Comr. Uzoegwu Micheal Kosisochukwu",
       department: "Home Economics and Hospitality Management Education",
       position: "Departmental President",
       year: "400 Level",
-      imageUrl:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80",
+      imageUrl: presidents,
     },
     {
-      name: "Ibrahim Mohammed",
+      name: "Comr. Jude Mamah",
       department: "Industrial Technical Education",
       position: "Departmental President",
       year: "500 Level",
-      imageUrl:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80",
+      imageUrl: presidents,
     },
     {
-      name: "Amina Yusuf",
+      name: "Comr. V.V.E",
       department: "Vocational and Entrepreneurship Education",
       position: "Departmental President",
       year: "400 Level",
-      imageUrl:
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80",
+      imageUrl: presidents,
     },
   ],
 };

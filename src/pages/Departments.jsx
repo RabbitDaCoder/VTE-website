@@ -424,7 +424,7 @@ const DepartmentsPage = () => {
                 (president, index) => (
                   <div key={index} className="text-center">
                     <img
-                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+                      src={president.imageUrl}
                       alt={`${president.name}`}
                       className="w-24 h-24 mx-auto rounded-full object-cover shadow-lg"
                     />

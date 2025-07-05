@@ -353,7 +353,7 @@ const HistorySection = () => {
                   whileHover={{ x: 5, color: "#166534" }}
                   transition={{ duration: 0.2 }}
                 >
-                  Agriculture and Bioresources Education
+                  Agriculture Education
                 </motion.li>
                 <motion.li
                   className="text-gray-700 font-medium"
@@ -550,7 +550,7 @@ const OrganizationStructure = () => {
         name: "Departments",
         children: [
           {
-            name: "Agriculture and Bioresources Education",
+            name: "Agriculture Education",
             children: [
               { name: "HOD", children: [] },
               { name: "Academic Staff", children: [] },
@@ -823,14 +823,17 @@ const WhyChooseUs = () => {
 // 8. Explore Departments Component
 const ExploreDepartments = () => {
   const departments = [
-    { name: "Agriculture and Bioresources Education", link: "/departments/1" },
+    { name: "Agriculture Education", link: "/departments/1" },
     { name: "Business Education", link: "/departments/2" },
     { name: "Computer and Robotics Education", link: "/departments/3" },
     {
       name: "Home Economics and Hospitality Management Education",
       link: "/departments/4",
     },
-    { name: "Industrial Technical Education", link: "/departments/5" },
+    {
+      name: "Industrial Technical Education",
+      link: "/departments/5",
+    },
     {
       name: "Vocational and Entrepreneurship Education",
       link: "/departments/6",
