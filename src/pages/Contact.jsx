@@ -5,24 +5,24 @@ import EmbeddedMap from "../components/Contact/EmbeddedMap";
 import SocialLinks from "../components/Contact/SocialLinks";
 import FAQSection from "../components/Contact/FAQSection";
 import HelpBox from "../components/Contact/HelpBox";
-import TempContactHeaderBgImage from "/images/hero/Temp_Contact_Header_Bg-Image.jpg";
+import TempContactHeaderBgImage from "/images/hero/hero-bg.jpg";
 import HelmetSEO from "../components/HelmetSEO.jsx";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen xl:pb-[5vw] bg-gradient-to-br from-green-50 via-white to-green-100 flex flex-col items-center">
+    <div className="min-h-full xl:pb-[5vw] bg-gradient-to-br from-green-50 via-white to-green-100 flex flex-col items-center">
       <HelmetSEO page="contact" />
       <div
-        className="pt-[20px] pb-[20px] xl:pt-[3vw] xl:pb-[3vw] w-full flex flex-col items-center bg-cover bg-center"
+        className="pt-[20px] pb-[20px] xl:pt-[3vw] xl:pb-[3vw] w-full h-[350px] flex flex-col items-center bg-cover bg-center px-2"
         style={{ backgroundImage: `url(${TempContactHeaderBgImage})` }}
       >
-        <h1 className="pr-[20px] pl-[20px] max-w-7xl font-extrabold text-center mb-[10px] lg:mb-[15px] text-4xl md:text-6xl text-gray-100 md:w-[600px] lg:w-[800px]  max-w-7xl">
+        <h1 className=" max-w-7xl font-extrabold text-center my-6 lg:my-12 text-2xl md:text-4xl text-gray-100 md:w-[600px] lg:w-[800px]">
           Contact the Faculty of
           <br /> Vocational and Technical Education
         </h1>
         <p
-          className="pr-[20px] pl-[20px] max-w-7xl mx-auto font-normal text-center text-base md:text-xl lg:text-3xl/10 xl:text-4xl/12 md:w-[600px]
-        lg:w-[900px] xl:w-[1200px]  max-w-7xl text-gray-100 xl:mb-[3vw]"
+          className="pr-[20px] pl-[20px]  mx-auto font-normal text-center text-base md:text-xl lg:text-xl xl:text-xl md:w-[600px]
+        lg:w-[900px] xl:w-[1200px]   text-gray-100 xl:mb-[3vw]"
         >
           We are here to assist current and prospective students, partners and
           the community. Reach out to us - We look forward to connecting!
