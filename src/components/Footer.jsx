@@ -217,7 +217,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to={"/about"}
+                    to={"/gallery"}
                     className="text-gray-600 hover:text-green-700 transition"
                   >
                     Gallery
@@ -300,10 +300,15 @@ const Footer = () => {
           </div>
         </div>
         {/* Copyright */}
-        <div className="text-center py-4">
+        <div className="text-center ">
           <p className="text-sm text-gray-500 font-medium">
             &copy; {new Date().getFullYear()} Cresea Tech Society. All rights
             reserved.
+          </p>
+        </div>
+        <div className="text-center py-1">
+          <p className="text-sm text-gray-500 font-medium">
+            In Association with University of Nigeria Nsukka.
           </p>
         </div>
       </div>

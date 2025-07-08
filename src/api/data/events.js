@@ -1,4 +1,4 @@
-import eventsImg from "../../../public/images/events/eventsImg-1.jpg";
+import eventsImg from "/images/events/eventsImg-1.jpg";
 import tenYearCelebration from "/images/ten-years-aniversery.jpg";
 
 // Events data with sequential IDs

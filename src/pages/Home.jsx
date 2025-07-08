@@ -73,7 +73,7 @@ const Home = () => {
       <HelmetSEO page="home" />
       {/* Hero Section */}
       <motion.div
-        className="w-full lg:h-[480px] h-[650px] bg-cover bg-center relative rounded-b-3xl shadow-lg overflow-hidden"
+        className="w-full lg:h-[480px] h-[680px] bg-cover bg-center relative rounded-b-3xl shadow-lg overflow-hidden"
         style={{ backgroundImage: `url(${bgImg})` }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -85,14 +85,22 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          <div className="text-center mt-24 lg:mt-44 space-y-8">
+          <div className="text-center mt-24 lg:mt-24 space-y-8">
+            <motion.h1
+              className="text-3xl md:text-6xl font-extrabold text-white drop-shadow-lg tracking-tight mb-2"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            >
+              Vocational and Technical Education
+            </motion.h1>
             <motion.h1
               className="text-3xl md:text-6xl font-extrabold text-white drop-shadow-lg tracking-tight mb-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
             >
-              Vocational and Technical Education
+              University of Nigeria Nsukka
             </motion.h1>
             <motion.div
               className="flex items-center  md:flex-row gap-4 justify-center"
@@ -117,7 +125,7 @@ const Home = () => {
         </motion.div>
         {/* Feature Cards & Stats */}
         <motion.div
-          className="bg-white grid grid-cols-2 lg:grid-cols-5 gap-4 px-4 py-4 absolute bottom-2 left-1/2 w-11/12 max-w-5xl rounded-3xl shadow-xl border border-green-100 "
+          className="bg-white grid grid-cols-2 lg:grid-cols-5 gap-4 px-4 py-4 absolute bottom-3 left-1/2 w-11/12 max-w-5xl rounded-3xl shadow-xl border border-green-100 "
           initial={{ opacity: 0, x: "-50%", y: 100 }}
           animate={{ opacity: 1, x: "-50%", y: 0 }}
           transition={{

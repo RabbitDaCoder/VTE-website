@@ -4,7 +4,7 @@ import { LuMoveRight, LuAlignLeft, LuX, LuCookie } from "react-icons/lu";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ContactModal from "./UI/ContactModal";
-import logo from "/public/logo.png";
+import logo from "/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,6 +88,7 @@ const Header = () => {
               <Link to={"/blog"}>Blog</Link>
               <Link to={"/notice"}>Notice</Link>
               <Link to={"/events"}>Events</Link>
+              <Link to={"/gallery"}>Gallery</Link>
               <Link to={"/about"}>About</Link>
               <Link to={"/contact"}>Contact</Link>
             </ul>
@@ -159,6 +160,11 @@ const Header = () => {
             <li>
               <Link to={"/events"} onClick={handleCloseMenu}>
                 Events
+              </Link>
+            </li>
+            <li>
+              <Link to={"/gallery"} onClick={handleCloseMenu}>
+                Gallery
               </Link>
             </li>
             <li>

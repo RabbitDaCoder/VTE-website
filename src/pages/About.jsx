@@ -550,7 +550,7 @@ const OrganizationStructure = () => {
         name: "Departments",
         children: [
           {
-            name: "Agriculture Education",
+            name: "Agriculture and Bioresources Education",
             children: [
               { name: "HOD", children: [] },
               { name: "Academic Staff", children: [] },
@@ -823,7 +823,7 @@ const WhyChooseUs = () => {
 // 8. Explore Departments Component
 const ExploreDepartments = () => {
   const departments = [
-    { name: "Agriculture Education", link: "/departments/1" },
+    { name: "Agriculture and Bioresources Education", link: "/departments/1" },
     { name: "Business Education", link: "/departments/2" },
     { name: "Computer and Robotics Education", link: "/departments/3" },
     {

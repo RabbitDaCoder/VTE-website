@@ -57,6 +57,18 @@ export const departments = [
       blogIds: [4, 5],
       eventIds: [2, 5],
     },
+    contact: {
+      address:
+        "Department of Agriculture and Bioresources Education, Faculty of Vocational and Technical Education, University of Nigeria, Nsukka",
+      email: "agriculture.edu@unn.edu.ng",
+      phone: "+234 803 456 7890",
+      hours: "Monday - Friday: 8:00 AM - 4:00 PM",
+    },
+    social: {
+      facebook: "https://facebook.com/unnagriculture",
+      twitter: "https://twitter.com/unnagriculture",
+      instagram: "https://instagram.com/unnagriculture",
+    },
     gallery: [
       "/images/departments/agriculture/gallery-1.jpg",
       "/images/departments/agriculture/gallery-2.jpg",
@@ -98,6 +110,18 @@ export const departments = [
       ],
       blogIds: [2, 3],
       eventIds: [1, 3],
+    },
+    contact: {
+      address:
+        "Department of Business Education, Faculty of Vocational and Technical Education, University of Nigeria, Nsukka",
+      email: "business.edu@unn.edu.ng",
+      phone: "+234 805 678 9012",
+      hours: "Monday - Friday: 9:00 AM - 5:00 PM",
+    },
+    social: {
+      facebook: "https://facebook.com/unnbusiness",
+      twitter: "https://twitter.com/unnbusiness",
+      linkedin: "https://linkedin.com/company/unnbusiness",
     },
     gallery: [
       "/images/departments/business/gallery-1.jpg",
@@ -228,6 +252,20 @@ export const departments = [
         ],
       },
     ],
+    contact: {
+      address:
+        "Department of Computer and Robotics Education, Faculty of Vocational and Technical Education, University of Nigeria, Nsukka",
+      email: "computerrobotics@unn.edu.ng",
+      phone: "+234 803 123 4567",
+      hours: "Monday - Friday: 8:00 AM - 4:00 PM",
+    },
+    social: {
+      facebook: "https://facebook.com/unncomputerrobotics",
+      twitter: "https://twitter.com/unncomputerrobotics",
+      instagram: "https://instagram.com/unncomputerrobotics",
+      linkedin: "https://linkedin.com/company/unncomputerrobotics",
+      youtube: "https://youtube.com/unncomputerrobotics",
+    },
     blogIds: [1, 4],
     eventIds: [3, 4],
     gallery: [
@@ -267,6 +305,18 @@ export const departments = [
       ],
       blogIds: [3, 5],
       eventIds: [5, 7],
+    },
+    contact: {
+      address:
+        "Department of Home Economics and Hospitality Management, Faculty of Vocational and Technical Education, University of Nigeria, Nsukka",
+      email: "homeeconomics@unn.edu.ng",
+      phone: "+234 807 890 1234",
+      hours: "Monday - Friday: 8:30 AM - 4:30 PM",
+    },
+    social: {
+      facebook: "https://facebook.com/unnhomeeconomics",
+      instagram: "https://instagram.com/unnhomeeconomics",
+      youtube: "https://youtube.com/unnhomeeconomics",
     },
     gallery: [
       "/images/departments/home-economics/gallery-1.jpg",
@@ -310,6 +360,18 @@ export const departments = [
       blogIds: [1, 2],
       eventIds: [4, 6],
     },
+    contact: {
+      address:
+        "Department of Industrial Technical Education, Faculty of Vocational and Technical Education, University of Nigeria, Nsukka",
+      email: "industrial.tech@unn.edu.ng",
+      phone: "+234 809 012 3456",
+      hours: "Monday - Friday: 8:00 AM - 4:00 PM",
+    },
+    social: {
+      facebook: "https://facebook.com/unnindustrialtech",
+      twitter: "https://twitter.com/unnindustrialtech",
+      linkedin: "https://linkedin.com/company/unnindustrialtech",
+    },
     gallery: [
       "/images/departments/industrial/gallery-1.jpg",
       "/images/departments/industrial/gallery-2.jpg",
@@ -351,6 +413,19 @@ export const departments = [
       ],
       blogIds: [2, 5],
       eventIds: [1, 8],
+    },
+    contact: {
+      address:
+        "Department of Vocational and Entrepreneurship Education, Faculty of Vocational and Technical Education, University of Nigeria, Nsukka",
+      email: "vocational.edu@unn.edu.ng",
+      phone: "+234 801 234 5678",
+      hours: "Monday - Friday: 9:00 AM - 5:00 PM",
+    },
+    social: {
+      facebook: "https://facebook.com/unnvocational",
+      twitter: "https://twitter.com/unnvocational",
+      instagram: "https://instagram.com/unnvocational",
+      youtube: "https://youtube.com/unnvocational",
     },
     gallery: [
       "/images/departments/vocational/gallery-1.jpg",

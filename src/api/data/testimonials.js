@@ -1,7 +1,7 @@
 // Sample testimonial images (replace with actual images)
-import testimonialImg1 from "../../../public/images/testimonial/testimonial1.jpg";
-import testimonialImg2 from "../../../public/images/testimonial/testimonial2.jpg";
-import testimonialImg3 from "../../../public/images/testimonial/testimonial3.jpg";
+import testimonialImg1 from "/images/testimonial/testimonial1.jpg";
+import testimonialImg2 from "/images/testimonial/testimonial2.jpg";
+import testimonialImg3 from "/images/testimonial/testimonial3.jpg";
 
 // Testimonials data
 export const testimonials = [

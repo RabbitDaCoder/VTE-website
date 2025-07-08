@@ -1,5 +1,5 @@
 import React from "react";
-import DeanImage from "../../public/images/deanImg.jpeg";
+import DeanImage from "/images/deanImg.jpeg";
 const DeansSection = () => {
   return (
     <section className="py-20 bg-gray-50 ">

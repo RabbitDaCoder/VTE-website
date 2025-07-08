@@ -15,6 +15,8 @@ import EventDetails from "../components/UI/EventsDetails";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsOfService from "../pages/TermsOfService";
 import CookiePolicy from "../pages/CookiePolicy";
+import GalleryPage from "../pages/Gallery";
+import GalleryDetail from "../components/UI/GalleryDetail";
 
 const routes = createBrowserRouter([
   {
@@ -65,6 +67,14 @@ const routes = createBrowserRouter([
       {
         path: "/notice/:id",
         element: <NoticeDetails />,
+      },
+      {
+        path: "/gallery",
+        element: <GalleryPage />,
+      },
+      {
+        path: "/gallery/:id",
+        element: <GalleryDetail />,
       },
       {
         path: "/privacy-policy",

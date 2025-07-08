@@ -118,13 +118,13 @@ const Blog = () => {
           <h2 className="text-2xl font-bold text-green-800 mb-6">
             Featured Article
           </h2>
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden h-[400px]">
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden lg:h-[400px] h-[650px]">
             <div className="md:flex">
               <div className="md:w-1/2 h-full">
                 <img
                   src={featuredBlog.image}
                   alt={featuredBlog.title}
-                  className="h-64 md:h-full w-full object-cover"
+                  className="h-64 md:h-full w-full object-contain"
                 />
               </div>
               <div className="p-6 md:w-1/2 flex flex-col justify-start">

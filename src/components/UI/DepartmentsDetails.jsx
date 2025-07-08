@@ -8,6 +8,11 @@ import {
   FaUsers,
   FaPhone,
   FaEnvelope,
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
 } from "react-icons/fa";
 import {
   LuBuilding,
@@ -20,6 +25,7 @@ import {
   LuImage,
   LuCalendar,
   LuPhone,
+  LuMapPin,
 } from "react-icons/lu";
 import HelmetSEO from "../HelmetSEO";
 
@@ -48,7 +54,7 @@ const DepartmentDetail = () => {
       <HelmetSEO page="departmentDetail" department={dept} />
 
       {/* Hero Section with Department Logo and Gallery Image */}
-      <div className="relative h-[550px] lg:h-[400px] bg-green-900">
+      <div className="relative h-[550px] lg:h-[420px] bg-green-900">
         {/* Background Image from Gallery */}
         <div className="absolute inset-0 z-0">
           <img
@@ -366,7 +372,216 @@ const DepartmentDetail = () => {
           </div>
         )}
 
-        {/* 10. Contact info of department */}
+        {/* 8. Gallery Section */}
+        {dept.gallery && dept.gallery.length > 0 && (
+          <div className="bg-white rounded-xl shadow border border-green-100 p-6 mb-10">
+            <div className="flex items-center gap-2 mb-4">
+              <LuImage className="text-2xl text-green-700" />
+              <h2 className="text-2xl font-bold text-green-800">
+                Department Gallery
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {dept.gallery.slice(0, 6).map((image, index) => (
+                <div
+                  key={index}
+                  className="relative group overflow-hidden rounded-lg aspect-square"
+                >
+                  <img
+                    src={image}
+                    alt={`${dept.name} Gallery Image ${index + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-green-900/0 group-hover:bg-green-900/40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span className="text-white bg-green-800/70 px-3 py-1 rounded-full text-sm backdrop-blur-sm">
+                      View Full Size
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {dept.gallery.length > 4 && (
+              <div className="mt-4 text-center">
+                <Link
+                  to={`/gallery/${dept.id}`}
+                  className="inline-flex items-center gap-2 bg-green-100 hover:bg-green-200 text-green-800 px-4 py-2 rounded-full transition-colors"
+                >
+                  <LuImage className="text-green-700" />
+                  View All {dept.gallery.length} Photos
+                </Link>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* 9. Contact Information */}
+        <div className="bg-white rounded-xl shadow border border-green-100 p-6 mb-10">
+          <div className="flex items-center gap-2 mb-4">
+            <LuPhone className="text-2xl text-green-700" />
+            <h2 className="text-2xl font-bold text-green-800">
+              Contact Information
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Contact Details */}
+            <div className="bg-green-50 p-5 rounded-lg">
+              <h3 className="font-semibold text-green-800 mb-3">
+                Department Office
+              </h3>
+
+              {dept.contact ? (
+                <div className="space-y-3">
+                  {dept.contact.address && (
+                    <div className="flex items-start gap-3">
+                      <LuMapPin className="text-green-700 mt-1 flex-shrink-0" />
+                      <p className="text-gray-700">{dept.contact.address}</p>
+                    </div>
+                  )}
+
+                  {dept.contact.email && (
+                    <div className="flex items-center gap-3">
+                      <FaEnvelope className="text-green-700 flex-shrink-0" />
+                      <a
+                        href={`mailto:${dept.contact.email}`}
+                        className="text-green-700 hover:underline"
+                      >
+                        {dept.contact.email}
+                      </a>
+                    </div>
+                  )}
+
+                  {dept.contact.phone && (
+                    <div className="flex items-center gap-3">
+                      <FaPhone className="text-green-700 flex-shrink-0" />
+                      <a
+                        href={`tel:${dept.contact.phone}`}
+                        className="text-green-700 hover:underline"
+                      >
+                        {dept.contact.phone}
+                      </a>
+                    </div>
+                  )}
+
+                  {dept.contact.hours && (
+                    <div className="flex items-start gap-3">
+                      <LuCalendar className="text-green-700 mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="text-gray-700 font-medium">
+                          Office Hours:
+                        </p>
+                        <p className="text-gray-700">{dept.contact.hours}</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <p className="text-gray-600">
+                  Contact information coming soon.
+                </p>
+              )}
+            </div>
+
+            {/* Social Media */}
+            <div className="bg-green-50 p-5 rounded-lg">
+              <h3 className="font-semibold text-green-800 mb-3">
+                Connect With Us
+              </h3>
+
+              {dept.social && Object.keys(dept.social).length > 0 ? (
+                <div className="space-y-4">
+                  <div className="flex flex-wrap gap-3">
+                    {dept.social.facebook && (
+                      <a
+                        href={dept.social.facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white p-3 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition-colors shadow-sm"
+                      >
+                        <FaFacebook size={20} />
+                      </a>
+                    )}
+
+                    {dept.social.twitter && (
+                      <a
+                        href={dept.social.twitter}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white p-3 rounded-full text-blue-400 hover:bg-blue-400 hover:text-white transition-colors shadow-sm"
+                      >
+                        <FaTwitter size={20} />
+                      </a>
+                    )}
+
+                    {dept.social.instagram && (
+                      <a
+                        href={dept.social.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white p-3 rounded-full text-pink-600 hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-500 hover:text-white transition-colors shadow-sm"
+                      >
+                        <FaInstagram size={20} />
+                      </a>
+                    )}
+
+                    {dept.social.linkedin && (
+                      <a
+                        href={dept.social.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white p-3 rounded-full text-blue-700 hover:bg-blue-700 hover:text-white transition-colors shadow-sm"
+                      >
+                        <FaLinkedin size={20} />
+                      </a>
+                    )}
+
+                    {dept.social.youtube && (
+                      <a
+                        href={dept.social.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white p-3 rounded-full text-red-600 hover:bg-red-600 hover:text-white transition-colors shadow-sm"
+                      >
+                        <FaYoutube size={20} />
+                      </a>
+                    )}
+                  </div>
+
+                  <p className="text-sm text-gray-600">
+                    Follow us on social media to stay updated with the latest
+                    news, events, and achievements.
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p className="text-gray-600 mb-3">
+                    Connect with us on our faculty social media channels:
+                  </p>
+                  <div className="flex gap-3">
+                    <a
+                      href="https://facebook.com/unn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white p-3 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition-colors shadow-sm"
+                    >
+                      <FaFacebook size={20} />
+                    </a>
+                    <a
+                      href="https://twitter.com/unn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white p-3 rounded-full text-blue-400 hover:bg-blue-400 hover:text-white transition-colors shadow-sm"
+                    >
+                      <FaTwitter size={20} />
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
