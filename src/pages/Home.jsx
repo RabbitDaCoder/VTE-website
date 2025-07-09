@@ -214,7 +214,7 @@ const Home = () => {
             return (
               <motion.div
                 key={index}
-                className="bg-white border border-green-400 shadow-[4px_4px_0px_rgba(34,197,94,1)] rounded-lg text-left p-6 relative w-[350px] h-[180px] hover:shadow-[6px_6px_0px_rgba(34,197,94,1)] transition-all duration-300"
+                className="bg-white border border-green-400 shadow-[4px_4px_0px_rgba(34,197,94,1)] rounded-lg text-left p-6 relative w-[300px] lg:w-[350px] h-[180px] hover:shadow-[6px_6px_0px_rgba(34,197,94,1)] transition-all duration-300"
                 variants={itemFadeIn}
                 whileHover={{
                   y: -10,
@@ -228,7 +228,7 @@ const Home = () => {
                 >
                   <Icon className="text-green-600" />
                 </motion.div>
-                <h3 className="text-lg font-bold mt-6 text-green-800">
+                <h3 className="lg:text-lg font-bold mt-2 lg:mt-6 text-green-800">
                   {benefit.title}
                 </h3>
                 <p className="text-green-700 mt-2 text-sm">
