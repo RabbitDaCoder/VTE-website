@@ -399,7 +399,7 @@ export const departments = [
       "Financial Literacy",
     ],
     details: {
-      head: "Dr. Okereke",
+      head: "Dr. G. K. O. Okereke",
       faculty: [
         "Prof. Startup Dynamics",
         "Dr. Skill Acquisition",
