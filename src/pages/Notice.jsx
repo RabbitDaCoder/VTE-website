@@ -205,10 +205,16 @@ const Notice = () => {
                   </span>
                 </p>
               </div>
-              <button className="flex items-center gap-1 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-semibold shadow transition text-sm">
+              <a
+                href={d.link}
+                download
+                className="flex items-center gap-1 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-semibold shadow transition text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <LuDownload className="text-lg" />
                 Download
-              </button>
+              </a>
             </div>
           ))}
         </div>

@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { departments } from "../api/data";
+import facultyLife from "../api/data/facultyLife";
 import { LuImage, LuChevronDown, LuArrowRight } from "react-icons/lu";
 import HelmetSEO from "../components/HelmetSEO";
 
@@ -193,20 +194,20 @@ const GalleryPage = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {/* Sample faculty life images - in a real implementation, these would come from a separate data source */}
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+            {facultyLife.map((item) => (
               <div
-                key={item}
+                key={item.id}
                 className="relative aspect-square rounded-lg overflow-hidden group"
               >
                 <img
-                  src={`https://source.unsplash.com/random/300x300?education,university&sig=${item}`}
-                  alt={`Faculty Life ${item}`}
+                  src={item.image}
+                  alt={item.caption}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-green-900/0 group-hover:bg-green-900/40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <span className="text-white bg-green-800/70 px-3 py-1 rounded-full text-sm backdrop-blur-sm">
-                    View
+                    {item.caption}
                   </span>
                 </div>
               </div>
