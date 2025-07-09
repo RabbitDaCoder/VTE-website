@@ -7,7 +7,7 @@ import {
   FaXTwitter,
   FaLinkedinIn,
 } from "react-icons/fa6";
-import logo from "/public/logo.png"; // Using absolute path to public directory
+import logo from "/logo.png"; // Using absolute path to public directory
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -82,7 +82,12 @@ const Footer = () => {
               to={"/"}
               className="text-3xl font-extrabold tracking-wide text-green-700 drop-shadow-sm"
             >
-              <img src={logo} alt="VTE Logo" className="h-10 w-auto" />
+              <img
+                src={logo}
+                alt="VTE Logo"
+                className="h-16 w-auto"
+                loading="lazy"
+              />
             </Link>
             <div className="text-base text-gray-600">
               We believe in the power of play to foster creativity,
@@ -93,24 +98,24 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <LuMail className="text-xl text-green-700" />
                 <a
-                  href="mailto:vesa@gmail.com"
+                  href="mailto:vte@unn.edu.ng"
                   className="hover:text-green-700 transition"
                 >
-                  vesa@gmail.com
+                  vte@unn.edu.ng
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <LuPhone className="text-xl text-green-700" />
                 <a
-                  href="tel:9045678223"
+                  href="tel:+2349045678223"
                   className="hover:text-green-700 transition"
                 >
-                  9045678223
+                  +234 904 567 8223
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <LuMapPin className="text-xl text-green-700" />
-                <span>Nssuka, Enugu Nigeria.</span>
+                <span>Nsukka, Enugu Nigeria.</span>
               </div>
             </div>
           </div>

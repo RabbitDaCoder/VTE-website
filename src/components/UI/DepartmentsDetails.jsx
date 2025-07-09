@@ -61,6 +61,7 @@ const DepartmentDetail = () => {
             src={randomGalleryImage}
             alt={`${dept.name} Background`}
             className="w-full h-full object-cover opacity-40"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-green-900/70 to-green-800/90"></div>
         </div>
@@ -73,6 +74,7 @@ const DepartmentDetail = () => {
                 src={dept.logo}
                 alt={`${dept.name} Logo`}
                 className="w-32 h-32 object-contain"
+                loading="lazy"
               />
             ) : (
               <Icon className="text-6xl text-white" />
@@ -104,6 +106,7 @@ const DepartmentDetail = () => {
               src={dept.image}
               alt={dept.name}
               className="object-cover w-full h-full"
+              loading="lazy"
             />
             <div className="absolute top-4 left-4 bg-white/80 rounded-full p-3 shadow">
               <Icon className="text-3xl text-green-700" />
@@ -392,6 +395,7 @@ const DepartmentDetail = () => {
                     src={image}
                     alt={`${dept.name} Gallery Image ${index + 1}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-green-900/0 group-hover:bg-green-900/40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="text-white bg-green-800/70 px-3 py-1 rounded-full text-sm backdrop-blur-sm">

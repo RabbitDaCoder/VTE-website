@@ -71,14 +71,19 @@ const Header = () => {
             </span>
           </div>
         </section>
-        <div className="w-full h-14  bg-white border border-stone-300 px-5 py-1.5 flex items-center justify-between backdrop-blur-md">
+        <div className="w-full h-20  bg-white border border-stone-300 px-5 py-1.5 flex items-center justify-between backdrop-blur-md">
           <Link
             to={"/"}
             className="text-2xl font-extrabold tracking-wide text-green-700 drop-shadow-sm"
           >
             <div>
               {" "}
-              <img src={logo} alt="VTE Logo" className="h-10 w-auto" />
+              <img
+                src={logo}
+                alt="VTE Logo"
+                className="h-14 w-auto"
+                loading="lazy"
+              />
             </div>
           </Link>
           <nav className="mt-2">

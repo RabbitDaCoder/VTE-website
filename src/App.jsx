@@ -7,6 +7,19 @@ import { HelmetProvider } from "react-helmet-async";
 function App() {
   const { pathname } = useLocation();
 
+  // routing to hash navlinks e.g /contact#faq
+  // const location = useLocation();
+  // useEffect(() => {
+  //   if (location.hash) {
+  //     const el = document.querySelector(location.hash);
+  //     if (el) {
+  //       el.scrollIntoView({ behavior: "smooth" });
+  //     } else {
+  //       window.scrollTo({ top: 0, behavior: "smooth" });
+  //     }
+  //   }
+  // }, [location]);
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [pathname]);

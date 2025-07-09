@@ -247,7 +247,8 @@ const BlogDetails = () => {
                 <img
                   src={blog.image}
                   alt={blog.title}
-                  className="w-full h-[300px] lg:h-[500px] object-contain"
+                  className="w-full h-64 md:h-96 object-cover rounded-t-xl"
+                  loading="lazy"
                 />
 
                 <div className="p-6 md:p-10">

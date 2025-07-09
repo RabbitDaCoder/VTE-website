@@ -95,7 +95,7 @@ const Home = () => {
               Vocational and Technical Education
             </motion.h1>
             <motion.h1
-              className="text-3xl md:text-6xl font-extrabold text-white drop-shadow-lg tracking-tight mb-4"
+              className="text-3xl md:text-3xl font-extrabold text-white drop-shadow-lg tracking-tight mb-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}

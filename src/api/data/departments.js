@@ -17,9 +17,9 @@ import Cre_logo from "/images/departments/CRE/CRE_Logo.png";
 const CRE = "/images/departments/CRE/cre-4.jpg";
 const VEE = "/images/departments/VEE/vee-3.jpg";
 const BE = "/images/departments/BE/be-1.jpg";
-const HEC = "/images/departments/HEC/hec1.PNG";
-const AE = "/images/departments/AE/ae-1.PNG";
-const ITE = "/images/departments/ITE/ite2.PNG";
+const HEC = "/images/departments/HEC/hec1.png";
+const AE = "/images/departments/AE/ae-1.png";
+const ITE = "/images/departments/ITE/ite2.png";
 
 // Departments data with sequential IDs
 export const departments = [

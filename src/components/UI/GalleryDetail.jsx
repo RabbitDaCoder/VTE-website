@@ -225,11 +225,36 @@ const GalleryDetail = () => {
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center">
           <div className="relative w-full h-full flex flex-col">
             {/* Lightbox Header */}
-            <div className="p-4 flex justify-between items-center text-white">
+            <div className="px-4 py-2 flex justify-between items-center text-white">
               <h3 className="text-lg font-medium">
                 {department.name} - Image {selectedImage + 1} of{" "}
                 {department.gallery.length}
               </h3>
+
+              {/* Desktop buttons - show at top */}
+              <div className="hidden md:flex items-center gap-3 mr-4">
+                <a
+                  href={department.gallery[selectedImage]}
+                  download
+                  className="flex items-center gap-2 px-3 py-1.5 bg-green-700 hover:bg-green-800 rounded-lg transition-colors text-sm"
+                >
+                  <LuDownload size={16} />
+                  Download
+                </a>
+                <button
+                  className="flex items-center gap-2 px-3 py-1.5 bg-gray-700 hover:bg-gray-800 rounded-lg transition-colors text-sm"
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      department.gallery[selectedImage]
+                    );
+                    alert("Image URL copied to clipboard!");
+                  }}
+                >
+                  <LuShare2 size={16} />
+                  Share
+                </button>
+              </div>
+
               <button
                 onClick={closeLightbox}
                 className="p-2 hover:bg-white/10 rounded-full transition-colors"
@@ -239,11 +264,11 @@ const GalleryDetail = () => {
             </div>
 
             {/* Image Container */}
-            <div className="flex-1 flex items-center justify-center p-4 relative">
+            <div className="flex-1 flex items-center justify-center px-2 relative">
               <img
                 src={department.gallery[selectedImage]}
                 alt={`${department.name} Gallery Image ${selectedImage + 1}`}
-                className="max-h-full max-w-full object-contain"
+                className="max-h-full max-w-full object-contain mx-auto"
               />
 
               {/* Navigation Buttons */}
@@ -266,8 +291,8 @@ const GalleryDetail = () => {
               )}
             </div>
 
-            {/* Lightbox Footer */}
-            <div className="p-4 flex justify-center gap-4 text-white">
+            {/* Mobile buttons - show at bottom */}
+            <div className="md:hidden p-4 flex justify-center gap-4 text-white">
               <a
                 href={department.gallery[selectedImage]}
                 download

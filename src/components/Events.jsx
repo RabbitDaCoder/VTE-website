@@ -99,6 +99,7 @@ const Events = () => {
                           className="w-full h-48 object-cover rounded-md"
                           whileHover={{ scale: 1.05 }}
                           transition={{ duration: 0.3 }}
+                          loading="lazy"
                         />
                         {/* Calendar-style Date Badge */}
                         <div className="absolute top-3 left-3 bg-white rounded-md px-2 text-center shadow-md text-red-600 leading-tight w-12">

@@ -980,10 +980,9 @@ const PhotoCarousel = () => {
                 <motion.img
                   key={index}
                   src={src}
-                  alt={`Faculty event ${index + 1}`}
-                  className="w-full flex-shrink-0"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
+                  alt={`Faculty Image ${index + 1}`}
+                  className="min-w-full h-auto object-cover rounded-lg"
+                  loading="lazy"
                 />
               ))}
             </motion.div>
