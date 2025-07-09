@@ -23,11 +23,11 @@ export const events = [
     title: "VTE Faculty 10th Anniversary Celebration",
     description:
       "Special Tech Service Session by Computer and Robotics Education Department",
-    date: "2024-07-08T09:00:00",
+    date: "2024-07-09T10:00:00",
     department: "Computer and Robotics Education",
     image: tenYearCelebration,
-    location: "VTE Faculty Complex",
-    upcoming: new Date("2024-07-08T09:00:00") > new Date(),
+    location: "Princess Alexandra Auditorium",
+    upcoming: new Date("2024-07-09T10:00:00") > new Date(),
     content:
       "In celebration of the 10th year Anniversary of the Faculty of Vocational and Technical Education (VTE), the Department of Computer and Robotics Education is excited to present a Special Tech Service Session as part of the anniversary activities.\n\nAs highlighted in our program, we will be offering:\n• Software Development Services\n• Free Hardware Maintenance Consultation\n\nThis initiative is aimed at showcasing the practical skills and innovation that define our department. It also serves as our contribution to the anniversary celebration, providing value to both students and staff through technical support and development expertise.\n\nThe event will feature:\n• Technical workshops led by faculty experts\n• Student-led demonstrations of innovative projects\n• One-on-one consultation sessions for hardware issues\n• Software development clinics for those with project ideas\n\nAll members of the university community are invited to participate in this celebration of technology and education. Whether you need technical assistance or simply want to explore the innovations happening in our department, we welcome your presence.\n\nDate: July 8th, 2024\nTime: 9:00 AM - 4:00 PM\nVenue: VTE Faculty Complex\n\nJoin us as we celebrate a decade of excellence in vocational and technical education!",
     author: "Edeh Chinedu Daniel",
